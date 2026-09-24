@@ -21,7 +21,7 @@ export function SearchForm({ query }: { query: string }) {
         Search
       </label>
       <input id="q" name="q" defaultValue={query} className="field" />
-      <button type="submit" className="inline-flex min-h-12 items-center bg-primary px-6 text-sm font-medium text-primary-foreground">
+      <button type="submit" className="btn-primary">
         Search
       </button>
     </form>

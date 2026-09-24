@@ -8,16 +8,19 @@ import { track } from "@/lib/analytics"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border">
+    <footer className="bg-ink text-white">
       <div className="container grid gap-10 py-12 md:grid-cols-4">
         <div>
-          <p className="font-serif text-xl">Beak Insights</p>
-          <p className="mt-3 text-sm text-muted-foreground">
+          <p className="inline-flex items-center gap-2 font-serif text-xl text-white">
+            <span className="mark" aria-hidden="true" />
+            Beak Insights
+          </p>
+          <p className="mt-3 text-sm text-on-ink">
             Technology, informatics, and healthcare consulting from strategy through implementation.
           </p>
         </div>
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.12em]">Services</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-gold">Services</h2>
           <ul className="mt-3 space-y-2 text-sm">
             {services.map((service) => (
               <li key={service.slug}>
@@ -29,7 +32,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.12em]">Work</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-gold">Work</h2>
           <ul className="mt-3 space-y-2 text-sm">
             {cases.map((item) => (
               <li key={item.slug}>
@@ -41,7 +44,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.12em]">Contact</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-gold">Contact</h2>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <a
@@ -69,8 +72,8 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border">
-        <div className="container flex flex-col gap-3 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-white/15">
+        <div className="container flex flex-col gap-3 py-6 text-sm text-on-ink sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Beak Insights.</p>
           <ul className="flex flex-wrap gap-x-4 gap-y-2">
             {legalLinks.map((link) => (

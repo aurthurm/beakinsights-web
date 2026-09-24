@@ -9,7 +9,7 @@ export function CaseCta({ slug }: { slug: string }) {
       <h2 className="font-serif text-3xl">Solve a similar challenge</h2>
       <Link
         href="/contact"
-        className="mt-4 inline-flex min-h-12 items-center bg-primary px-6 text-sm font-medium text-primary-foreground"
+        className="btn-primary mt-4"
         onClick={() => track("case_cta_click", { case: slug, destination: "/contact" })}
       >
         Discuss a similar challenge

@@ -49,7 +49,7 @@ export default function InsightsPage({
       </p>
       <ul className="mt-6 grid gap-6 lg:grid-cols-3">
         {visible.map((item) => (
-          <li key={item.slug} className="border border-border p-6">
+          <li key={item.slug} className="border-t-2 border-gold bg-white p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               {item.type} · {item.topicLabel}
             </p>

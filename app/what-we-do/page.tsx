@@ -23,7 +23,16 @@ export default function WhatWeDoPage() {
       </p>
       <div className="mt-12 grid gap-6 lg:grid-cols-3">
         {services.map((service) => (
-          <article key={service.slug} className="border border-border p-6">
+          <article
+            key={service.slug}
+            className={
+              service.tone === "navy"
+                ? "border border-navy bg-white p-6"
+                : service.tone === "teal"
+                  ? "border border-teal bg-mist p-6"
+                  : "border border-gold/40 bg-sand p-6"
+            }
+          >
             <h2 className="font-serif text-3xl">{service.name}</h2>
             <p className="mt-4">{service.lede}</p>
             <Link href={service.href} className="mt-6 inline-flex min-h-11 items-center text-sm font-medium">
@@ -64,7 +73,7 @@ export default function WhatWeDoPage() {
             </li>
           ))}
         </ul>
-        <Link href="/contact" className="mt-8 inline-flex min-h-12 items-center bg-primary px-6 text-sm font-medium text-primary-foreground">
+        <Link href="/contact" className="btn-primary mt-8">
           Discuss your challenge
         </Link>
       </section>

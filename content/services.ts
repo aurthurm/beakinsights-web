@@ -21,6 +21,7 @@ export type Service = {
   diagram: "architecture" | "information" | "workflow"
   diagramTitle: string
   diagramCaption: string
+  tone: "navy" | "teal" | "healthcare"
 }
 
 export const services: Service[] = [
@@ -66,6 +67,7 @@ export const services: Service[] = [
     ],
     method: ["Discover the estate", "Choose the target state", "Sequence the change", "Assure delivery", "Measure capability"],
     diagram: "architecture",
+    tone: "navy",
     diagramTitle: "Current state to target state",
     diagramCaption:
       "IT work starts by naming the systems and decisions in place today, then the target architecture those decisions have to become.",
@@ -117,6 +119,7 @@ export const services: Service[] = [
     ],
     method: ["Discover the flow", "Model the meaning", "Design the exchange", "Implement the path", "Measure the decision"],
     diagram: "information",
+    tone: "teal",
     diagramTitle: "From data flow to decision flow",
     diagramCaption:
       "Informatics work traces a fact from its source, through definition and exchange, to the decision that depends on it.",
@@ -168,6 +171,7 @@ export const services: Service[] = [
     ],
     method: ["Map the workflow", "Name the information", "Design the change", "Implement with operators", "Measure adoption"],
     diagram: "workflow",
+    tone: "healthcare",
     diagramTitle: "Workflow before configuration",
     diagramCaption:
       "Healthcare work follows the path from preparation, through the encounter or laboratory step, to the downstream action that depends on the result.",

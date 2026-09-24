@@ -16,34 +16,37 @@ export const metadata = pageMeta({
 export default function HomePage() {
   return (
     <div>
-      <section className="container grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-            Technology · Informatics · Healthcare
-          </p>
-          <h1 className="mt-4 max-w-xl font-serif text-4xl md:text-6xl">
-            Turn complex systems into measurable outcomes.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg">
-            Strategy, design and delivery for organizations working through difficult technology, data and healthcare change.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/contact" className="inline-flex min-h-12 items-center justify-center bg-primary px-6 text-sm font-medium text-primary-foreground">
-              Talk to an advisor
-            </Link>
-            <Link href="/work" className="inline-flex min-h-12 items-center justify-center border border-border px-6 text-sm font-medium">
-              See our work
-            </Link>
+      <section className="bg-ink text-white">
+        <div className="container grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
+          <div>
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+              <span className="mark" aria-hidden="true" />
+              Technology · Informatics · Healthcare
+            </p>
+            <h1 className="mt-4 max-w-xl font-serif text-4xl text-white md:text-6xl">
+              Turn complex systems into measurable outcomes.
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-on-ink">
+              Strategy, design and delivery for organizations working through difficult technology, data and healthcare change.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="btn-primary">
+                Talk to an advisor
+              </Link>
+              <Link href="/work" className="btn-secondary-dark">
+                See our work
+              </Link>
+            </div>
           </div>
+          <HeroDiagram tone="dark" />
         </div>
-        <HeroDiagram />
       </section>
 
-      <section className="border-y border-border bg-secondary">
+      <section className="bg-navy text-white">
         <div className="container grid gap-6 py-8 md:grid-cols-3">
-          <p className="text-sm">Open-source laboratory information management, published as Felicity LIMS.</p>
-          <p className="text-sm">Instrument-to-system connectivity, published as Felicity LabLink.</p>
-          <p className="text-sm">SQL visualization, published as BeakDash. No client metrics are claimed beyond the published systems.</p>
+          <p className="text-sm"><span className="mark mr-3 align-middle" aria-hidden="true" />Open-source laboratory information management, published as Felicity LIMS.</p>
+          <p className="text-sm"><span className="mark mr-3 align-middle" aria-hidden="true" />Instrument-to-system connectivity, published as Felicity LabLink.</p>
+          <p className="text-sm"><span className="mark mr-3 align-middle" aria-hidden="true" />SQL visualization, published as BeakDash. No unpublished client metrics are shown.</p>
         </div>
       </section>
 
@@ -51,10 +54,22 @@ export default function HomePage() {
         <h2 className="font-serif text-3xl md:text-5xl">What we do</h2>
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {services.map((service) => (
-            <article key={service.slug} className="flex flex-col border border-border p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{service.shortLabel}</p>
+            <article
+              key={service.slug}
+              className={
+                service.tone === "navy"
+                  ? "flex flex-col border border-navy bg-white p-6"
+                  : service.tone === "teal"
+                    ? "flex flex-col border border-teal bg-mist p-6"
+                    : "flex flex-col border border-gold/40 bg-sand p-6"
+              }
+            >
+              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate">
+                <span className="mark" aria-hidden="true" />
+                {service.shortLabel}
+              </p>
               <h3 className="mt-3 font-serif text-2xl">{service.cardLine}</h3>
-              <p className="mt-3 text-sm text-muted-foreground">{service.topics}</p>
+              <p className="mt-3 text-sm text-slate">{service.topics}</p>
               <Link href={service.href} className="mt-6 inline-flex min-h-11 items-center text-sm font-medium">
                 Explore {service.name}
               </Link>
@@ -63,7 +78,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-muted">
+      <section className="bg-white">
         <div className="container py-16 md:py-20">
           <h2 className="font-serif text-3xl md:text-4xl">Selected work</h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -92,8 +107,9 @@ export default function HomePage() {
         <ol className="mt-8 grid gap-6 md:grid-cols-5">
           {method.map((step) => (
             <li key={step.name}>
+              <span className="mark mb-3" aria-hidden="true" />
               <h3 className="font-serif text-xl">{step.name}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{step.summary}</p>
+              <p className="mt-2 text-sm text-slate">{step.summary}</p>
             </li>
           ))}
         </ol>
@@ -104,8 +120,8 @@ export default function HomePage() {
           <h2 className="font-serif text-3xl md:text-4xl">Insights from our practitioners</h2>
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {insights.map((item) => (
-              <article key={item.slug} className="border border-border p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              <article key={item.slug} className="border-t-2 border-gold bg-white p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">
                   {item.type} · {item.topicLabel}
                 </p>
                 <h3 className="mt-3 font-serif text-2xl">{item.title}</h3>
@@ -119,10 +135,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground">
+      <section className="bg-ink text-white">
         <div className="container flex flex-col gap-6 py-16 md:flex-row md:items-center md:justify-between">
-          <h2 className="font-serif text-3xl md:text-4xl">What are you trying to change?</h2>
-          <Link href="/contact" className="inline-flex min-h-12 items-center justify-center bg-background px-6 text-sm font-medium text-foreground">
+          <h2 className="font-serif text-3xl text-white md:text-4xl">What are you trying to change?</h2>
+          <Link href="/contact" className="btn-primary">
             Talk to an advisor
           </Link>
         </div>

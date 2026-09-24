@@ -4,24 +4,35 @@
 
 @layer base {
   :root {
-    --background: 40 23% 97%;
-    --foreground: 30 12% 10%;
-    --card: 40 23% 99%;
-    --card-foreground: 30 12% 10%;
-    --primary: 174 46% 16%;
-    --primary-foreground: 40 33% 98%;
-    --secondary: 36 18% 92%;
-    --secondary-foreground: 30 12% 12%;
-    --muted: 36 16% 93%;
-    --muted-foreground: 30 8% 28%;
-    --accent: 174 32% 92%;
-    --accent-foreground: 174 46% 14%;
-    --destructive: 4 72% 32%;
-    --destructive-foreground: 40 33% 98%;
-    --border: 32 12% 82%;
-    --input: 32 12% 78%;
-    --ring: 174 46% 16%;
-    --diagram: 28 48% 34%;
+    --ink: #0b132b;
+    --navy: #12355b;
+    --teal: #0f766e;
+    --gold: #d4a72c;
+    --ivory: #f7f5f0;
+    --white: #ffffff;
+    --mist: #e6f6f4;
+    --sand: #fff7e6;
+    --graphite: #111827;
+    --slate: #667085;
+    --line: #e4dfd6;
+    --on-ink: #e7e2d8;
+    --background: var(--ivory);
+    --foreground: var(--graphite);
+    --card: var(--white);
+    --card-foreground: var(--graphite);
+    --primary: var(--teal);
+    --primary-foreground: var(--white);
+    --secondary: var(--navy);
+    --secondary-foreground: var(--white);
+    --muted: var(--mist);
+    --muted-foreground: var(--slate);
+    --accent: var(--sand);
+    --accent-foreground: var(--ink);
+    --destructive: #9f1239;
+    --destructive-foreground: var(--white);
+    --border: var(--line);
+    --input: #cfc8bb;
+    --ring: var(--teal);
     --radius: 0.25rem;
   }
 
@@ -43,13 +54,17 @@
   h2,
   h3,
   h4 {
-    @apply font-serif text-foreground;
+    @apply font-serif text-ink;
     line-height: 1.08;
     text-wrap: balance;
   }
 
+  a {
+    @apply text-teal underline-offset-4;
+  }
+
   :focus-visible {
-    outline: 2px solid hsl(var(--ring));
+    outline: 2px solid var(--ring);
     outline-offset: 3px;
   }
 
@@ -75,10 +90,26 @@
   }
 
   .field {
-    @apply min-h-12 w-full border border-input bg-card px-3 py-3 text-base text-foreground;
+    @apply min-h-12 w-full border border-input bg-card px-3 py-3 text-base text-graphite;
   }
 
   textarea.field {
     min-height: 9rem;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center bg-teal px-6 text-sm font-medium text-white no-underline;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-12 items-center justify-center border border-ink bg-transparent px-6 text-sm font-medium text-ink no-underline;
+  }
+
+  .btn-secondary-dark {
+    @apply inline-flex min-h-12 items-center justify-center border border-white bg-transparent px-6 text-sm font-medium text-white no-underline;
+  }
+
+  .mark {
+    @apply inline-block h-2 w-2 bg-gold;
   }
 }

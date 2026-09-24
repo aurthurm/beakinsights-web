@@ -72,7 +72,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <nav aria-label="Primary" className="container flex h-16 items-center justify-between gap-4 md:h-20">
-        <Link href="/" className="font-serif text-xl tracking-tight md:text-2xl">
+        <Link href="/" className="inline-flex items-center gap-2 font-serif text-xl tracking-tight text-ink no-underline md:text-2xl">
+          <span className="mark" aria-hidden="true" />
           Beak Insights
         </Link>
 
@@ -139,7 +140,7 @@ export function SiteHeader() {
           ))}
           <Link
             href="/contact"
-            className="inline-flex min-h-12 items-center bg-primary px-5 text-sm font-medium text-primary-foreground"
+            className="btn-primary"
           >
             Talk to an advisor
           </Link>
@@ -227,7 +228,7 @@ export function SiteHeader() {
               ))}
               <Link
                 href="/contact"
-                className="mt-6 inline-flex min-h-12 items-center justify-center bg-primary px-5 text-sm font-medium text-primary-foreground"
+                className="btn-primary"
               >
                 Talk to an advisor
               </Link>

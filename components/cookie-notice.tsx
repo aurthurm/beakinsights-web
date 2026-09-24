@@ -29,7 +29,7 @@ export function CookieNotice() {
         <div className="flex flex-wrap gap-3">
           <button
             type="button"
-            className="inline-flex min-h-12 items-center border border-border px-4 text-sm"
+            className="btn-secondary"
             onClick={() => {
               writeConsent("essential")
               setVisible(false)
@@ -39,7 +39,7 @@ export function CookieNotice() {
           </button>
           <button
             type="button"
-            className="inline-flex min-h-12 items-center bg-primary px-4 text-sm text-primary-foreground"
+            className="btn-primary"
             onClick={() => {
               writeConsent("analytics")
               setVisible(false)

@@ -35,11 +35,23 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
     <article className="container py-12 md:py-16">
       <TrackView event="view_service" params={{ service: service.slug, source: "service-page" }} />
       <Breadcrumbs items={[{ name: "What we do", href: "/what-we-do" }, { name: service.name, href: service.href }]} />
+      <p
+        className={
+          service.tone === "navy"
+            ? "mt-6 inline-flex items-center gap-2 border-l-4 border-navy pl-3 text-xs font-semibold uppercase tracking-[0.14em] text-navy"
+            : service.tone === "teal"
+              ? "mt-6 inline-flex items-center gap-2 border-l-4 border-teal pl-3 text-xs font-semibold uppercase tracking-[0.14em] text-teal"
+              : "mt-6 inline-flex items-center gap-2 border-l-4 border-gold bg-sand px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-ink"
+        }
+      >
+        <span className="mark" aria-hidden="true" />
+        {service.name}
+      </p>
       <div className="mt-8 grid items-start gap-10 lg:grid-cols-2">
         <div>
           <h1 className="font-serif text-4xl md:text-6xl">{service.h1}</h1>
           <p className="mt-6 text-lg">{service.lede}</p>
-          <Link href="/contact" className="mt-8 inline-flex min-h-12 items-center bg-primary px-6 text-sm font-medium text-primary-foreground">
+          <Link href="/contact" className="btn-primary mt-8">
             Talk to an advisor
           </Link>
         </div>
@@ -116,7 +128,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
       <section className="mt-16 flex flex-col gap-4 border border-border p-6 md:flex-row md:items-center md:justify-between">
         <h2 className="font-serif text-3xl">Have a similar challenge?</h2>
-        <Link href="/contact" className="inline-flex min-h-12 items-center bg-primary px-6 text-sm font-medium text-primary-foreground">
+        <Link href="/contact" className="btn-primary">
           Start a conversation
         </Link>
       </section>

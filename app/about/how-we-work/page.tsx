@@ -38,7 +38,7 @@ export default function HowWeWorkPage() {
             </li>
           ))}
         </ul>
-        <Link href="/contact" className="mt-8 inline-flex min-h-12 items-center bg-primary px-6 text-sm font-medium text-primary-foreground">
+        <Link href="/contact" className="btn-primary mt-8">
           Talk to an advisor
         </Link>
       </section>

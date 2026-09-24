@@ -12,7 +12,7 @@ function SubmitButton() {
   return (
     <button
       type="submit"
-      className="inline-flex min-h-12 items-center bg-primary px-6 text-sm font-medium text-primary-foreground disabled:opacity-60"
+      className="btn-primary disabled:opacity-60"
       disabled={pending}
     >
       {pending ? "Sending" : "Start a conversation"}
@@ -91,7 +91,7 @@ export function ContactForm() {
         <textarea id="challenge" name="challenge" required maxLength={1500} rows={6} className="field" />
       </Field>
       {need === "Healthcare" ? (
-        <p className="border border-border bg-secondary px-4 py-3 text-sm">
+        <p className="border border-gold/50 bg-sand px-4 py-3 text-sm text-ink">
           Please do not include patient, clinical or other sensitive personal information in this form.
         </p>
       ) : null}
