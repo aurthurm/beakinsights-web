@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/seo"
 export const metadata = pageMeta({
   title: "Insights & Research | Beak Insights",
   description:
-    "Practical analysis on IT strategy, informatics, data, interoperability, healthcare technology and implementation.",
+    "Practical analysis on IT strategy, AI and agentic systems, informatics, data, interoperability, healthcare technology and implementation.",
   path: "/insights",
 })
 
@@ -30,7 +30,7 @@ export default function InsightsPage({
   return (
     <div className="container py-12 md:py-16">
       <h1 className="max-w-4xl font-serif text-4xl md:text-6xl">
-        Insights for complex technology and healthcare decisions.
+        Insights for complex technology, AI and healthcare decisions.
       </h1>
       <p className="measure mt-6 text-lg">
         Research and practical guidance from people working on the problems—not commentary written at a distance.
@@ -47,7 +47,7 @@ export default function InsightsPage({
       <p className="mt-4 text-sm" aria-live="polite">
         {visible.length} {visible.length === 1 ? "result" : "results"}
       </p>
-      <ul className="mt-6 grid gap-6 lg:grid-cols-3">
+      <ul className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {visible.map((item) => (
           <li key={item.slug} className="border-t-2 border-gold bg-white p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
