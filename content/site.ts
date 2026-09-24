@@ -2,8 +2,6 @@ export const site = {
   name: "Beak Insights",
   url: "https://www.beakinsights.com",
   email: "info@beakinsights.com",
-  phone: "+263 776 406 399",
-  phoneHref: "tel:+263776406399",
   whatsapp: "+263 71 306 9794",
   whatsappHref: "https://wa.me/263713069794",
   description:

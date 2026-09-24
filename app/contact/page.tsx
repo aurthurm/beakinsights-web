@@ -36,11 +36,6 @@ export default function ContactPage() {
               </a>
             </li>
             <li>
-              <a className="underline underline-offset-4" href={site.phoneHref}>
-                {site.phone}
-              </a>
-            </li>
-            <li>
               <a className="btn-primary" href={site.whatsappHref}>
                 WhatsApp {site.whatsapp}
               </a>

@@ -17,7 +17,7 @@ export const legalPages: LegalPage[] = [
       {
         heading: "Who we are",
         paragraphs: [
-          "Beak Insights is the data controller for personal information collected through www.beakinsights.com. You can reach us at info@beakinsights.com, by telephone on +263 776 406 399, or by WhatsApp on +263 71 306 9794.",
+          "Beak Insights is the data controller for personal information collected through www.beakinsights.com. You can reach us at info@beakinsights.com or by WhatsApp on +263 71 306 9794.",
           "A street address for the controller is not published on this website. Use the contact details above to exercise your rights. This notice is written for the Cyber and Data Protection Act [Chapter 12:07] of Zimbabwe. The Postal and Telecommunications Regulatory Authority of Zimbabwe (POTRAZ) is the Data Protection Authority.",
         ],
       },

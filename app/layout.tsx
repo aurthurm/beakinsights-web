@@ -43,7 +43,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               url: site.url,
               logo: `${site.url}/logo.png`,
               email: site.email,
-              telephone: site.phone,
               description: site.description,
             }}
           />
