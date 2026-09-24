@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo"
 export const metadata = pageMeta({
   title: "About Beak Insights",
   description:
-    "Beak Insights is a consultancy for technology, informatics, and healthcare problems that cross the boundary between strategy and implementation.",
+    "Beak Insights is a consultancy for technology, AI, informatics, and healthcare problems that cross the boundary between strategy and implementation.",
   path: "/about",
 })
 
@@ -17,7 +17,7 @@ export default function AboutPage() {
       <section className="mt-12">
         <h2 className="font-serif text-3xl">The problem</h2>
         <p className="measure mt-4">
-          Important technology and healthcare initiatives break down when strategy, systems, information and operations are treated separately.
+          Important technology, AI and healthcare initiatives break down when strategy, systems, information, governance and operations are treated separately.
         </p>
       </section>
       <section className="mt-10">
@@ -37,7 +37,7 @@ export default function AboutPage() {
       <section className="mt-12">
         <h2 className="font-serif text-3xl">Who does the work</h2>
         <p className="measure mt-4">
-          The practice is a versatile team that can cross technology, informatics, and healthcare. This site describes how that team works. It does not publish individual names.
+          The practice is a versatile team that can cross technology, AI, informatics, and healthcare. This site describes how that team works. It does not publish individual names.
         </p>
         <Link href="/about/team" className="mt-4 inline-flex min-h-11 items-center text-sm font-medium">
           Meet the team
