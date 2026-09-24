@@ -42,11 +42,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-navy text-white">
-        <div className="container grid gap-6 py-8 md:grid-cols-3">
-          <p className="text-sm"><span className="mark mr-3 align-middle" aria-hidden="true" />Open-source laboratory information management, published as Felicity LIMS.</p>
-          <p className="text-sm"><span className="mark mr-3 align-middle" aria-hidden="true" />Instrument-to-system connectivity, published as Felicity LabLink.</p>
-          <p className="text-sm"><span className="mark mr-3 align-middle" aria-hidden="true" />SQL visualization, published as BeakDash. No unpublished client metrics are shown.</p>
+      <section className="bg-navy text-white" aria-label="Trust marks">
+        <div className="container py-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gold">Clients and certifications</p>
+          <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {["Client", "Client", "Client", "Certification", "Certification", "Partner"].map((label, index) => (
+              <li key={`${label}-${index}`}>
+                <div
+                  aria-disabled="true"
+                  className="flex h-16 items-center justify-center border border-dashed border-white/30 bg-white/5 px-3 text-center text-xs uppercase tracking-[0.12em] text-white/50"
+                >
+                  {label} reserved
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm text-on-ink">These spaces stay blank until a name or certification is cleared for publication.</p>
         </div>
       </section>
 

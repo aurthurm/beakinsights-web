@@ -65,6 +65,14 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
+              <a
+                href={site.whatsappHref}
+                className="inline-flex min-h-11 items-center underline-offset-4 hover:underline"
+              >
+                WhatsApp {site.whatsapp}
+              </a>
+            </li>
+            <li>
               <Link href="/contact" className="inline-flex min-h-11 items-center underline-offset-4 hover:underline">
                 Talk to an advisor
               </Link>

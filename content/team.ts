@@ -1,13 +1,19 @@
-export const team = [
-  {
-    slug: "aurthur-musendame",
-    name: "Aurthur Musendame",
-    summary:
-      "Aurthur Musendame is the person publicly named on the Beak Insights website. A detailed practice biography, qualifications list, and selected-engagement record are not published here.",
-    url: "https://www.aurthurm.com",
-  },
-] as const
-
-export function getPerson(slug: string) {
-  return team.find((person) => person.slug === slug)
-}
+export const teamPractice = {
+  title: "A versatile team",
+  summary:
+    "Beak Insights is a small, versatile team. The same people can move from an architecture decision to the information flow and the workflow that has to carry it. We do not publish individual names, portraits, or biographies on this site.",
+  strengths: [
+    {
+      name: "Range",
+      summary: "Technology, informatics, and healthcare are treated as one problem when the work crosses those boundaries.",
+    },
+    {
+      name: "Delivery",
+      summary: "The team stays close to implementation, integration, and the point where a decision has to work in practice.",
+    },
+    {
+      name: "Judgment",
+      summary: "Recommendations stay specific to the system, the information, and the people who have to operate them.",
+    },
+  ],
+} as const

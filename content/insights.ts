@@ -11,7 +11,6 @@ export type Insight = {
   type: InsightType
   date: string
   updated: string
-  authorSlug: "aurthur-musendame"
   caseSlug?: string
   paragraphs: string[]
 }
@@ -27,7 +26,6 @@ export const insights: Insight[] = [
     type: "Brief",
     date: "2026-09-24",
     updated: "2026-09-24",
-    authorSlug: "aurthur-musendame",
     caseSlug: "beakdash",
     paragraphs: [
       "Most modernization roadmaps fail in a predictable place. They describe a destination—cloud, a new platform, a cleaner architecture—and then treat the path as a list of projects. The list looks decisive. It does not say which system has to keep running on Monday, which interface is load-bearing, or which decision is allowed to wait.",
@@ -49,7 +47,6 @@ export const insights: Insight[] = [
     type: "Brief",
     date: "2026-09-24",
     updated: "2026-09-24",
-    authorSlug: "aurthur-musendame",
     caseSlug: "beakdash",
     paragraphs: [
       "When an analytics request arrives, the visible object is usually a dashboard. The difficult object is the path the fact took before it reached the chart. If that path is unclear, the dashboard becomes a faster way to disagree.",
@@ -71,7 +68,6 @@ export const insights: Insight[] = [
     type: "Brief",
     date: "2026-09-24",
     updated: "2026-09-24",
-    authorSlug: "aurthur-musendame",
     caseSlug: "felicity-lims",
     paragraphs: [
       "Healthcare technology programs often begin with a system selection. The more useful beginning is the work: who receives the patient or the sample, what they must know, what they record, who they hand it to, and what happens when the usual path does not apply.",

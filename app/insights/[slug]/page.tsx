@@ -8,7 +8,6 @@ import { getCase } from "@/content/cases"
 import { getInsight, insights } from "@/content/insights"
 import { getService } from "@/content/services"
 import { site } from "@/content/site"
-import { getPerson } from "@/content/team"
 import { pageMeta } from "@/lib/seo"
 
 export function generateStaticParams() {
@@ -28,14 +27,13 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 export default function InsightPage({ params }: { params: { slug: string } }) {
   const item = getInsight(params.slug)
   if (!item) notFound()
-  const author = getPerson(item.authorSlug)
   const service = getService(item.topic)
   const relatedCase = item.caseSlug ? getCase(item.caseSlug) : undefined
   const url = new URL(`/insights/${item.slug}`, site.url).toString()
 
   return (
     <article className="container py-12 md:py-16">
-      <TrackView event="view_insight" params={{ topic: item.topic, author: item.authorSlug, type: item.type }} />
+      <TrackView event="view_insight" params={{ topic: item.topic, author: "beak-insights", type: item.type }} />
       <Breadcrumbs
         items={[
           { name: "Insights", href: "/insights" },
@@ -49,7 +47,7 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
       <p className="mt-4 text-sm text-muted-foreground">
         <time dateTime={item.date}>Published {item.date}</time>
         {item.updated !== item.date ? <span> · Updated {item.updated}</span> : null}
-        {author ? <span> · {author.name}</span> : null}
+        <span> · Beak Insights</span>
       </p>
       <div className="measure mt-8 space-y-5">
         {item.paragraphs.map((paragraph) => (
@@ -73,13 +71,11 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
               </Link>
             </li>
           ) : null}
-          {author ? (
-            <li>
-              <Link href="/about/team" className="underline underline-offset-4">
-                {author.name}
-              </Link>
-            </li>
-          ) : null}
+          <li>
+            <Link href="/about/team" className="underline underline-offset-4">
+              The team
+            </Link>
+          </li>
           <li>
             <Link href="/contact" className="underline underline-offset-4">
               Talk to an advisor
@@ -87,21 +83,19 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
           </li>
         </ul>
       </aside>
-      {author ? (
-        <JsonLd
-          data={{
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: item.title,
-            description: item.description,
-            datePublished: item.date,
-            dateModified: item.updated,
-            author: { "@type": "Person", name: author.name, url: author.url },
-            mainEntityOfPage: url,
-            publisher: { "@type": "Organization", name: site.name, url: site.url },
-          }}
-        />
-      ) : null}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: item.title,
+          description: item.description,
+          datePublished: item.date,
+          dateModified: item.updated,
+          author: { "@type": "Organization", name: site.name, url: site.url },
+          mainEntityOfPage: url,
+          publisher: { "@type": "Organization", name: site.name, url: site.url },
+        }}
+      />
     </article>
   )
 }

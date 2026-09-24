@@ -37,7 +37,7 @@ export default function AboutPage() {
       <section className="mt-12">
         <h2 className="font-serif text-3xl">Who does the work</h2>
         <p className="measure mt-4">
-          Clients should know who is doing the work. The public team page names only the people already identified on this site, without invented biographies.
+          The practice is a versatile team that can cross technology, informatics, and healthcare. This site describes how that team works. It does not publish individual names.
         </p>
         <Link href="/about/team" className="mt-4 inline-flex min-h-11 items-center text-sm font-medium">
           Meet the team

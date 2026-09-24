@@ -1,6 +1,7 @@
 "use server"
 
 import { validateInquiry } from "@/lib/inquiry"
+import { sendEnquiry } from "@/lib/send-enquiry"
 
 export type ContactState = {
   status: "idle" | "success" | "error"
@@ -9,12 +10,13 @@ export type ContactState = {
 }
 
 const received =
-  "Thanks. Your message has been received. A member of our team will review the request and route it to the appropriate practice."
+  "Thanks. Your message has been sent to info@beakinsights.com. A member of our team will review the request and route it to the appropriate practice."
 
 export async function submitInquiry(
   _prev: ContactState,
   formData: FormData
 ): Promise<ContactState> {
+  const honeypot = String(formData.get("company_website") || "")
   const parsed = validateInquiry({
     name: String(formData.get("name") || ""),
     email: String(formData.get("email") || ""),
@@ -22,42 +24,26 @@ export async function submitInquiry(
     need: String(formData.get("need") || ""),
     challenge: String(formData.get("challenge") || ""),
     consent: formData.get("consent") === "yes",
-    honeypot: String(formData.get("company_website") || ""),
+    honeypot,
   })
 
-  if (String(formData.get("company_website") || "").trim()) {
-    return { status: "success", message: received }
-  }
-
+  if (honeypot.trim()) return { status: "success", message: received }
   if (!parsed.ok) {
     return { status: "error", message: parsed.message, fieldErrors: parsed.fieldErrors }
   }
 
-  const webhook = process.env.CONTACT_WEBHOOK_URL
-  if (!webhook) {
-    return {
-      status: "error",
-      message:
-        "The enquiry form is not connected to a destination yet. Email info@beakinsights.com and we will reply directly.",
-    }
-  }
-
   try {
-    const response = await fetch(webhook, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...parsed.value, source: "website-contact" }),
-    })
-    if (!response.ok) {
+    const sent = await sendEnquiry(parsed.value)
+    if (!sent.ok) {
       return {
         status: "error",
-        message: "We could not send your message. Try again, or email info@beakinsights.com.",
+        message: "We could not send your message by email. Try again, email info@beakinsights.com, or use WhatsApp.",
       }
     }
   } catch {
     return {
       status: "error",
-      message: "We could not send your message. Try again, or email info@beakinsights.com.",
+      message: "We could not send your message by email. Try again, email info@beakinsights.com, or use WhatsApp.",
     }
   }
 

@@ -6,58 +6,66 @@ export type LegalPage = {
   sections: { heading: string; paragraphs: string[] }[]
 }
 
-const review =
-  "This page is a plain-language website notice for Beak Insights. It is not a substitute for jurisdiction-specific legal review of Beak’s actual processing, contracts, and client obligations."
-
 export const legalPages: LegalPage[] = [
   {
     slug: "privacy",
     title: "Privacy Notice | Beak Insights",
     h1: "Privacy notice",
     description:
-      "What information Beak Insights collects through this website, why it is used, and the choices available to you.",
+      "How Beak Insights collects, uses, and protects personal information submitted through this website, under Zimbabwe’s Cyber and Data Protection Act.",
     sections: [
       {
-        heading: "Scope",
+        heading: "Who we are",
         paragraphs: [
-          "This notice explains what information Beak Insights collects through this website, why it is used, and the choices available to you.",
-          review,
+          "Beak Insights is the data controller for personal information collected through www.beakinsights.com. You can reach us at info@beakinsights.com, by telephone on +263 776 406 399, or by WhatsApp on +263 71 306 9794.",
+          "A street address for the controller is not published on this website. Use the contact details above to exercise your rights. This notice is written for the Cyber and Data Protection Act [Chapter 12:07] of Zimbabwe. The Postal and Telecommunications Regulatory Authority of Zimbabwe (POTRAZ) is the Data Protection Authority.",
         ],
       },
       {
-        heading: "Information collected",
+        heading: "What we collect",
         paragraphs: [
-          "If you submit the contact form, we collect your name, work email, organization, the practice area you select, and the description you provide. Please do not include patient, clinical, or other sensitive personal information.",
-          "The site also stores a consent choice in your browser if you use the cookie notice. No enquiry text is sent to analytics.",
+          "If you submit the contact form, we collect your name, work email, organization, the practice area you select, and the description of the challenge. The form also records that you agreed to this notice.",
+          "If you use WhatsApp, email, or the telephone, we receive whatever you choose to send on that channel.",
+          "The site stores your cookie choice in your browser. It does not ask for an account, and it does not collect patient, clinical, or other sensitive personal information. Do not put that information in the form, in email, or in WhatsApp.",
+          "This website is not directed at anyone under 18. Do not submit a child’s personal information.",
         ],
       },
       {
-        heading: "How it is used",
+        heading: "Why we use it",
         paragraphs: [
-          "Contact details are used to review the enquiry, route it to someone with relevant domain experience, and reply. They are not used to build a public profile of you.",
+          "We use enquiry details to read the request, route it to the relevant practice, and reply. That is the purpose. We do not use the form to build a marketing list, and we do not sell the information.",
+          "Providing these details is voluntary. If you do not provide them, we cannot reply through the form. You can still contact us by email or WhatsApp.",
+          "The lawful basis for an enquiry is your consent, given by the checkbox on the form, and our legitimate interest in answering a request you started. Consent for the enquiry is separate from the terms of use. You can withdraw consent by emailing info@beakinsights.com. Withdrawal does not undo a reply already sent.",
+          "Analytics events are optional. They run only after you choose Allow analytics. They record the type of page or action, not the text of your enquiry.",
         ],
       },
       {
-        heading: "Retention",
+        heading: "Who receives it",
         paragraphs: [
-          "Enquiries should be kept only as long as needed to respond and to meet whatever record-keeping obligation applies to the conversation that follows. A specific retention schedule requires legal review against Beak’s actual systems and has not been published here.",
+          "Enquiries are emailed to info@beakinsights.com. Delivery uses FormSubmit (formsubmit.co) unless a private delivery address has been configured for the site. FormSubmit receives the form contents in order to send that email. We do not place enquiry text in analytics.",
+          "We may also disclose information if Zimbabwean law, a court, or POTRAZ requires it. We do not transfer enquiry data as a product to other companies.",
+          "Email delivery can pass through servers outside Zimbabwe. Where that happens, the transfer is limited to delivering the message you asked us to receive.",
         ],
       },
       {
-        heading: "Sharing",
+        heading: "How long we keep it",
         paragraphs: [
-          "If a contact webhook is configured, the form contents are sent to that destination so the team can receive them. They are not placed in analytics event parameters. This notice does not name a processor because the receiving system is an operational setting, not a claim published on the page.",
+          "We keep an enquiry for up to 24 months after our last reply, unless a later contract or a legal duty requires a longer record. The cookie choice stays in your browser until you clear it or change it.",
         ],
       },
       {
-        heading: "Rights and choices",
+        heading: "Your rights",
         paragraphs: [
-          "You may ask what enquiry information we hold about you and request correction or deletion, subject to any duty to keep a record of the conversation. Contact info@beakinsights.com. Whether a particular privacy statute applies depends on your location and on how the information is processed, which counsel should confirm.",
+          "Under the Cyber and Data Protection Act you may ask to be told how your information is used, to see the information we hold, to object to processing, to correct information that is false or misleading, and to have false or misleading information deleted.",
+          "Send the request to info@beakinsights.com. We aim to answer within 30 days. You may also complain to POTRAZ, the Data Protection Authority. POTRAZ publishes its contact details at potraz.gov.zw.",
+          "We do not use this website for direct marketing. If that ever changes, you will be told before your information is used that way, and you can object.",
         ],
       },
       {
-        heading: "Contact",
-        paragraphs: ["Privacy questions: info@beakinsights.com."],
+        heading: "Security",
+        paragraphs: [
+          "Access to enquiry email is limited to people who handle conversations for Beak Insights. No website transmission is perfectly secure. Do not send sensitive personal information through the form.",
+        ],
       },
     ],
   },
@@ -65,49 +73,35 @@ export const legalPages: LegalPage[] = [
     slug: "cookies",
     title: "Cookie Notice | Beak Insights",
     h1: "Cookie notice",
-    description: "How this website uses browser storage and what you can choose.",
+    description: "The browser storage this website uses, and how to accept or reject non-essential analytics.",
     sections: [
       {
-        heading: "Scope",
+        heading: "What this site stores",
         paragraphs: [
-          "This notice describes the browser storage this website uses.",
-          review,
+          "Beak Insights stores one choice in your browser’s local storage: whether you rejected non-essential storage or allowed analytics. The key is beak-consent. There is no advertising cookie and no pre-ticked consent.",
+          "Essential operation of the contact form does not depend on that choice. The form works if you reject non-essential storage.",
         ],
       },
       {
-        heading: "Information collected",
+        heading: "Analytics",
         paragraphs: [
-          "The cookie notice stores your choice—essential only, or analytics allowed—in local storage on your browser. The site does not set advertising cookies.",
-          "No analytics vendor script is loaded by this release. If you allow analytics, the site records only structured events such as a page type or a form success. It does not record what you typed in the enquiry.",
+          "If you allow analytics, the site records structured events such as a service page view, a case view, a filter, a search, or a successful form submission. The event does not include your name, email, or the text of the enquiry.",
+          "No analytics vendor script is loaded in this release. If one is added later, it will load only after this choice, and this notice will name the vendor before that happens.",
         ],
       },
       {
-        heading: "How it is used",
+        heading: "Your choice",
         paragraphs: [
-          "The consent value is used to decide whether those structured events may be recorded in the browser session. It is not sold.",
-        ],
-      },
-      {
-        heading: "Retention",
-        paragraphs: [
-          "The choice remains in local storage until you clear it or change it from a later visit. This release does not set an independent cookie expiry beyond that browser storage.",
-        ],
-      },
-      {
-        heading: "Sharing",
-        paragraphs: [
-          "Consent state is not sent to a third party by this release. If an analytics provider is added later, it should load only after this choice and this notice should be updated to name it.",
-        ],
-      },
-      {
-        heading: "Rights and choices",
-        paragraphs: [
-          "You can choose “Essential only” or “Allow analytics” in the notice. Essential only means the contact form still works and analytics events are not recorded.",
+          "The notice offers two actions with equal weight: Reject non-essential, and Allow analytics. Reject means only the consent record is kept so we do not ask on every page, and analytics events are not recorded.",
+          "Consent has to be a clear yes. Closing the notice is not consent. You can change your mind by clearing site data for beakinsights.com in your browser, which removes the stored choice and shows the notice again.",
+          "The choice remains until you clear it. We do not use the choice for any purpose other than honouring it.",
         ],
       },
       {
         heading: "Contact",
-        paragraphs: ["Questions: info@beakinsights.com."],
+        paragraphs: [
+          "Questions about this notice: info@beakinsights.com. You may also complain to POTRAZ if you believe storage on this site breaches the Cyber and Data Protection Act.",
+        ],
       },
     ],
   },
@@ -115,43 +109,56 @@ export const legalPages: LegalPage[] = [
     slug: "terms",
     title: "Terms of Use | Beak Insights",
     h1: "Terms of use",
-    description: "The terms that apply to use of the Beak Insights website.",
+    description: "The terms that apply when you use the Beak Insights website.",
     sections: [
       {
         heading: "Scope",
         paragraphs: [
-          "These terms apply to your use of this website. They do not by themselves create a consulting engagement.",
-          review,
+          "These terms apply to your use of www.beakinsights.com. They are between you and Beak Insights. They are not a consulting contract. Work begins only when both sides agree a separate engagement.",
+          "The terms are meant to be read with the law of Zimbabwe, including the Cyber and Data Protection Act [Chapter 12:07]. They do not limit any right that law does not allow us to limit.",
         ],
       },
       {
-        heading: "Information on this site",
+        heading: "Using the site",
         paragraphs: [
-          "Articles and service descriptions are general information about how Beak Insights approaches technology, informatics, and healthcare work. They are not advice for your organization and not a promise of a particular result.",
-          "Case pages describe published products. They do not invent client metrics, and they should not be read as a guarantee that the same capability will produce a measured outcome in another setting.",
+          "You may read the pages, search them, and send an enquiry. Do not misuse the site: do not attempt to break it, probe it without permission, or submit malware.",
+          "Do not send patient, clinical, or other sensitive personal information through the form, email link, or WhatsApp link. The form asks you not to, and we may delete a message that contains it.",
+          "You must not submit an enquiry for anyone under 18 or include a child’s personal information.",
+        ],
+      },
+      {
+        heading: "Information on the site",
+        paragraphs: [
+          "Service pages and articles explain how Beak Insights approaches technology, informatics, and healthcare work. They are general information. They are not advice for your organization and not a promise of a result.",
+          "Work pages describe systems Beak Insights has published. They are not measured client outcomes, and a blank trust space is not a client or a certification.",
         ],
       },
       {
         heading: "Enquiries",
         paragraphs: [
-          "Submitting the contact form starts a conversation. It does not oblige Beak Insights to propose, accept, or begin work. Do not include patient, clinical, or other sensitive personal information in the form.",
+          "Submitting the form, sending an email, or opening WhatsApp starts a conversation. It does not oblige Beak Insights to propose, accept, or begin work. We email form enquiries to info@beakinsights.com.",
         ],
       },
       {
         heading: "Intellectual property",
         paragraphs: [
-          "Site text, diagrams, and layout are owned by Beak Insights unless a page says otherwise. Felicity LabLink’s source code is published separately under the terms of its public repository.",
+          "Text, diagrams, and layout on this site belong to Beak Insights unless a page says otherwise. You may share a link. You may not copy the site design or republish the articles as your own.",
+          "Felicity LabLink’s source code is published in its own repository and follows the licence stated there.",
         ],
       },
       {
         heading: "Liability",
         paragraphs: [
-          "The website is provided as a source of information. To the extent the law allows, Beak Insights is not liable for decisions made solely from these pages. A specific limitation clause for each jurisdiction still needs counsel.",
+          "The site is provided as information. To the extent Zimbabwean law allows, Beak Insights is not liable for decisions made only from these pages, or for a message that never arrives because of a failure in email or WhatsApp outside our control.",
+          "Nothing on the site excludes liability that the law does not let us exclude.",
         ],
       },
       {
-        heading: "Contact",
-        paragraphs: ["Questions about these terms: info@beakinsights.com."],
+        heading: "Changes and contact",
+        paragraphs: [
+          "We may update these terms by publishing a new version on this page. Continued use of the site after that publication is use under the new version.",
+          "Questions: info@beakinsights.com or WhatsApp +263 71 306 9794.",
+        ],
       },
     ],
   },
@@ -159,8 +166,7 @@ export const legalPages: LegalPage[] = [
     slug: "accessibility",
     title: "Accessibility Statement | Beak Insights",
     h1: "Accessibility statement",
-    description:
-      "Beak Insights aims to conform to WCAG 2.2 Level AA on this website.",
+    description: "Beak Insights aims to conform to WCAG 2.2 Level AA on this website.",
     sections: [
       {
         heading: "Scope",
@@ -172,13 +178,14 @@ export const legalPages: LegalPage[] = [
         heading: "Known limits",
         paragraphs: [
           "Diagrams are inline SVG with a text equivalent beside them. If a diagram and its text disagree, the text is the version to rely on.",
-          "This statement is not a completed third-party audit. Defects found in use should be reported so they can be fixed.",
+          "The trust row is a set of inactive placeholders. It is not a list of clients or certifications.",
+          "This statement is not a completed third-party audit.",
         ],
       },
       {
         heading: "Contact",
         paragraphs: [
-          "If you cannot use a page, email info@beakinsights.com and include the page address and what you were trying to do. We will use that report to correct the barrier.",
+          "If you cannot use a page, email info@beakinsights.com or WhatsApp +263 71 306 9794 and include the page address and what you were trying to do. We will use that report to correct the barrier.",
         ],
       },
     ],

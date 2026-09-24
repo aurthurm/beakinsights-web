@@ -40,6 +40,11 @@ export default function ContactPage() {
                 {site.phone}
               </a>
             </li>
+            <li>
+              <a className="btn-primary" href={site.whatsappHref}>
+                WhatsApp {site.whatsapp}
+              </a>
+            </li>
           </ul>
         </section>
       </aside>

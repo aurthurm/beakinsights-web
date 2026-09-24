@@ -7,7 +7,7 @@ import { TrackView } from "@/components/track-view"
 import { casesForService } from "@/content/cases"
 import { insightsForService } from "@/content/insights"
 import { getService, services } from "@/content/services"
-import { getPerson, team } from "@/content/team"
+import { teamPractice } from "@/content/team"
 import { pageMeta } from "@/lib/seo"
 
 export function generateStaticParams() {
@@ -29,8 +29,6 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
   if (!service) notFound()
   const relatedCases = casesForService(service.slug)
   const relatedInsights = insightsForService(service.slug)
-  const person = getPerson(team[0].slug)
-
   return (
     <article className="container py-12 md:py-16">
       <TrackView event="view_service" params={{ service: service.slug, source: "service-page" }} />
@@ -103,15 +101,13 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         </ul>
       </section>
 
-      {person ? (
-        <section className="mt-16">
-          <h2 className="font-serif text-3xl">Expertise</h2>
-          <p className="mt-4 max-w-2xl">{person.summary}</p>
-          <Link href="/about/team" className="mt-3 inline-flex min-h-11 items-center text-sm font-medium">
-            Meet the team
-          </Link>
-        </section>
-      ) : null}
+      <section className="mt-16">
+        <h2 className="font-serif text-3xl">Expertise</h2>
+        <p className="mt-4 max-w-2xl">{teamPractice.summary}</p>
+        <Link href="/about/team" className="mt-3 inline-flex min-h-11 items-center text-sm font-medium">
+          How the team works
+        </Link>
+      </section>
 
       <section className="mt-16">
         <h2 className="font-serif text-3xl">Related insights</h2>

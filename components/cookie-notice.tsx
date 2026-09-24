@@ -21,7 +21,7 @@ export function CookieNotice() {
     >
       <div className="container flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <p className="max-w-3xl text-sm">
-          This site stores your cookie choice in the browser. Analytics events stay off until you allow them, and enquiry text is never included.{" "}
+          Analytics stays off unless you allow it. Rejecting is as available as allowing, and enquiry text is never included.{" "}
           <Link href="/legal/cookies" className="underline underline-offset-4">
             Cookie notice
           </Link>
@@ -35,7 +35,7 @@ export function CookieNotice() {
               setVisible(false)
             }}
           >
-            Essential only
+            Reject non-essential
           </button>
           <button
             type="button"

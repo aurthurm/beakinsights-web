@@ -4,6 +4,8 @@ export const site = {
   email: "info@beakinsights.com",
   phone: "+263 776 406 399",
   phoneHref: "tel:+263776406399",
+  whatsapp: "+263 71 306 9794",
+  whatsappHref: "https://wa.me/263713069794",
   description:
     "Beak Insights helps organizations design, modernize, integrate and improve technology, informatics and healthcare systems from strategy through implementation.",
   proposition:
