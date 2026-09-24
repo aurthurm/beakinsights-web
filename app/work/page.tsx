@@ -21,6 +21,7 @@ export default function WorkPage({
   const visible = topic
     ? cases.filter((item) => item.services.includes(topic as ServiceSlug))
     : cases
+  const workTopics = services.filter((service) => cases.some((item) => item.services.includes(service.slug)))
 
   return (
     <div className="container py-12 md:py-16">
@@ -32,7 +33,7 @@ export default function WorkPage({
         <Suspense>
           <ResourceFilters
             basePath="/work"
-            topics={services.map((service) => ({ value: service.slug, label: service.name }))}
+            topics={workTopics.map((service) => ({ value: service.slug, label: service.name }))}
           />
         </Suspense>
       </div>
