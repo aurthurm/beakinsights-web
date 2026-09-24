@@ -12,7 +12,7 @@ export function SiteFooter() {
       <div className="container grid gap-10 py-12 md:grid-cols-4">
         <div>
           <p className="inline-flex items-center gap-2 font-serif text-xl text-white">
-            <span className="mark" aria-hidden="true" />
+            <img src="/logo-white.png" alt="" width={22} height={32} className="h-8 w-auto" />
             Beak Insights
           </p>
           <p className="mt-3 text-sm text-on-ink">
