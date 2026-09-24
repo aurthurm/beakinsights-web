@@ -43,7 +43,7 @@ export const insights: Insight[] = [
     description:
       "A dashboard cannot repair a fact that has no owner, no stable definition, and no reliable path from the system that created it.",
     topic: "informatics-and-data",
-    topicLabel: "Informatics, Data & AI",
+    topicLabel: "Informatics & Data",
     type: "Brief",
     date: "2026-09-24",
     updated: "2026-09-24",
@@ -56,6 +56,27 @@ export const insights: Insight[] = [
       "Interoperability sits in the same sequence. If the decision depends on a fact moving between systems, the interface is part of the information design. A dashboard that hides a broken exchange will look complete and still be late.",
       "Only then is a visualization the right tool. BeakDash, for example, is published as a way to present SQL data interactively. That is useful when the query is the question. It does not replace ownership of the underlying data, and this site does not claim that it does.",
       "The same discipline applies when someone asks for artificial intelligence on top of the data. The prior questions remain: which workflow changes, what information is used, where a person stays accountable, what will be measured, and how misuse is governed. A model is not a substitute for a flow that nobody trusts.",
+    ],
+  },
+  {
+    slug: "rag-to-agentic-systems",
+    title: "From RAG to agentic systems: govern the action, not only the answer",
+    description:
+      "Useful AI agents need trusted knowledge, bounded tools, evaluation, identity and a clear point where a person remains accountable.",
+    topic: "ai-and-intelligent-systems",
+    topicLabel: "AI & Intelligent Systems",
+    type: "Brief",
+    date: "2026-09-24",
+    updated: "2026-09-24",
+    paragraphs: [
+      "Generative AI changes character when it moves from answering a question to taking an action. A retrieval-augmented assistant can return a grounded answer. An agentic system can decide which information to retrieve, choose a tool, call an application, update a record, trigger another agent, or ask a person to approve the next step. That changes the design problem from model selection to system accountability.",
+      "Start with the outcome and the workflow. The useful question is not how many agents to deploy. It is which decision or task should change, what the system is allowed to do, what remains with a person, and which observable result would show that the change is worthwhile. Automating a poorly understood workflow usually makes the uncertainty faster.",
+      "RAG is part of the operating foundation. The system needs to know which sources are authoritative, who may retrieve which information, how context is assembled, and how an answer can be traced back to evidence. Retrieval quality, access control, citations, and evaluation matter as much as the model generating the final text.",
+      "Tool access is where agentic risk becomes operational. An agent that can search a knowledge base is different from one that can send a message, approve a transaction, alter a patient-facing record, or invoke a production API. Identity, least privilege, action-level authorization, safe retries, and explicit boundaries should be designed before autonomy is increased.",
+      "Human oversight should follow consequence rather than fashion. Some low-risk actions can be automated. Others should be proposed by the system and approved by a person. High-consequence decisions may require the AI to remain advisory. The architecture should make those boundaries visible rather than relying on a prompt to remember them.",
+      "Evaluation also changes once a system can act. Teams need to measure more than whether an answer sounds good. Useful measures can include retrieval quality, groundedness, task completion, tool selection, refusal behavior, security policy adherence, latency, cost, escalation rate, and whether the downstream outcome actually improved.",
+      "Production AI therefore needs an operating model: versioning, observability, audit trails, incident response, cost controls, feedback, model and prompt changes, and ownership when the system behaves unexpectedly. Agentic systems are not a shortcut around architecture and governance; they make both more important.",
+      "Beak Insights approaches AI in that order: frame the outcome, assess data and AI readiness, design the architecture and guardrails, build and evaluate, then integrate the system into real work with enough monitoring and human accountability to operate it responsibly.",
     ],
   },
   {

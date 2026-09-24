@@ -16,7 +16,7 @@ export default function HowWeWorkPage() {
       <Breadcrumbs items={[{ name: "About", href: "/about" }, { name: "How we work", href: "/about/how-we-work" }]} />
       <h1 className="mt-8 max-w-3xl font-serif text-4xl md:text-6xl">From diagnosis to a result you can inspect.</h1>
       <p className="measure mt-6 text-lg">
-        A roadmap is useful only if teams can execute it. The method is the same across IT, informatics, and healthcare: make the problem specific, design a state that can be implemented, and stay through delivery long enough to know whether it held.
+        A roadmap is useful only if teams can execute it. The method is the same across IT, AI, informatics, and healthcare: make the problem specific, design a state that can be implemented and governed, and stay through delivery long enough to know whether it held.
       </p>
       <ol className="mt-12 space-y-8">
         {method.map((step, index) => (

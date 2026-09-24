@@ -10,9 +10,9 @@ import { method } from "@/content/site"
 import { pageMeta } from "@/lib/seo"
 
 export const metadata = pageMeta({
-  title: "Beak Insights | IT, Informatics & Healthcare Consulting",
+  title: "Beak Insights | IT, AI, Informatics & Healthcare Consulting",
   description:
-    "Beak Insights helps organizations design, modernize, integrate and improve technology, informatics and healthcare systems from strategy through implementation.",
+    "Beak Insights helps organizations design, modernize, integrate and improve technology, AI, informatics and healthcare systems from strategy through implementation.",
   path: "/",
 })
 
@@ -24,13 +24,13 @@ export default function HomePage() {
           <div>
             <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
               <span className="mark" aria-hidden="true" />
-              Technology · Informatics · Healthcare
+              Technology · AI · Informatics · Healthcare
             </p>
             <h1 className="mt-4 max-w-xl font-serif text-4xl text-white md:text-6xl">
               Turn complex systems into measurable outcomes.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-on-ink">
-              Strategy, design and delivery for organizations working through difficult technology, data and healthcare change.
+              Strategy, design and delivery for organizations working through difficult technology, AI, data and healthcare change.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <QuietLink href="/contact" className="btn-primary">
@@ -72,7 +72,7 @@ export default function HomePage() {
         <Reveal as="h2" className="font-serif text-3xl md:text-5xl">
           What we do
         </Reveal>
-        <Stagger className="mt-8 grid gap-6 lg:grid-cols-3">
+        <Stagger className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {services.map((service) => (
             <StaggerItem key={service.slug}>
               <MotionCard
@@ -136,7 +136,7 @@ export default function HomePage() {
           <Reveal as="h2" className="font-serif text-3xl md:text-4xl">
             Insights from our practitioners
           </Reveal>
-          <Stagger className="mt-8 grid gap-6 lg:grid-cols-3">
+          <Stagger className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {insights.map((item) => (
               <StaggerItem key={item.slug}>
                 <article className="h-full border-t-2 border-gold bg-white p-6">

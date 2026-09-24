@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useId, useRef, useState } from "react"
+import { createPortal } from "react-dom"
 import { services } from "@/content/services"
 import { nav } from "@/content/site"
 import { cn } from "@/lib/utils"
@@ -70,7 +71,7 @@ export function SiteHeader() {
   }, [servicesOpen])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-background">
       <nav aria-label="Primary" className="container flex h-16 items-center justify-between gap-4 md:h-20">
         <Link href="/" className="inline-flex items-center gap-2 font-serif text-xl tracking-tight text-ink no-underline md:text-2xl">
           <img src="/logo.svg" alt="" width={28} height={40} className="h-9 w-auto" />
@@ -159,86 +160,86 @@ export function SiteHeader() {
         </button>
       </nav>
 
-      {mobileOpen ? (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <button
-            type="button"
-            className="absolute inset-0 bg-foreground/40"
-            aria-label="Close menu"
-            onClick={() => {
-              setMobileOpen(false)
-              menuButtonRef.current?.focus()
-            }}
-          />
-          <div
-            ref={drawerRef}
-            id={drawerId}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Menu"
-            className="relative flex h-full w-full max-w-sm flex-col overflow-y-auto bg-background p-5"
-          >
-            <div className="flex items-center justify-between">
-              <p className="inline-flex items-center gap-2 font-serif text-xl">
-                <img src="/logo.svg" alt="" width={22} height={32} className="h-8 w-auto" />
-                Beak Insights
-              </p>
+      {mobileOpen
+        ? createPortal(
+            <div className="fixed inset-0 z-50 lg:hidden">
               <button
-                ref={closeButtonRef}
                 type="button"
-                className="inline-flex min-h-11 min-w-11 items-center justify-center"
+                className="absolute inset-0 bg-foreground/40"
+                aria-label="Close menu"
                 onClick={() => {
                   setMobileOpen(false)
                   menuButtonRef.current?.focus()
                 }}
+              />
+              <div
+                ref={drawerRef}
+                id={drawerId}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Menu"
+                className="relative z-10 flex h-full w-full max-w-sm flex-col overflow-y-auto bg-background p-5 text-foreground"
               >
-                Close
-              </button>
-            </div>
-            <div className="mt-8 flex flex-col">
-              <div className="border-b border-border py-2">
-                <div className="flex items-center justify-between gap-2">
-                  <Link href="/what-we-do" className="inline-flex min-h-11 items-center font-medium">
-                    What we do
-                  </Link>
+                <div className="flex items-center justify-between">
+                  <p className="inline-flex items-center gap-2 font-serif text-xl">
+                    <img src="/logo.svg" alt="" width={22} height={32} className="h-8 w-auto" />
+                    Beak Insights
+                  </p>
                   <button
+                    ref={closeButtonRef}
                     type="button"
                     className="inline-flex min-h-11 min-w-11 items-center justify-center"
-                    aria-expanded={mobileServicesOpen}
-                    onClick={() => setMobileServicesOpen((open) => !open)}
+                    onClick={() => {
+                      setMobileOpen(false)
+                      menuButtonRef.current?.focus()
+                    }}
                   >
-                    <span className="sr-only">Show services</span>
-                    {mobileServicesOpen ? "–" : "+"}
+                    Close
                   </button>
                 </div>
-                {mobileServicesOpen ? (
-                  <ul className="mb-3 space-y-2 pl-3">
-                    {services.map((service) => (
-                      <li key={service.slug}>
-                        <Link href={service.href} className="block py-2 text-sm">
-                          <span className="font-medium">{service.name}</span>
-                          <span className="mt-1 block text-muted-foreground">{service.navSummary}</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
+                <div className="mt-8 flex flex-col">
+                  <div className="border-b border-border py-2">
+                    <div className="flex items-center justify-between gap-2">
+                      <Link href="/what-we-do" className="inline-flex min-h-11 items-center font-medium">
+                        What we do
+                      </Link>
+                      <button
+                        type="button"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center"
+                        aria-expanded={mobileServicesOpen}
+                        onClick={() => setMobileServicesOpen((open) => !open)}
+                      >
+                        <span className="sr-only">Show services</span>
+                        {mobileServicesOpen ? "–" : "+"}
+                      </button>
+                    </div>
+                    {mobileServicesOpen ? (
+                      <ul className="mb-3 space-y-2 pl-3">
+                        {services.map((service) => (
+                          <li key={service.slug}>
+                            <Link href={service.href} className="block py-2 text-sm">
+                              <span className="font-medium">{service.name}</span>
+                              <span className="mt-1 block text-muted-foreground">{service.navSummary}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                  {nav.slice(1).map((item) => (
+                    <Link key={item.href} href={item.href} className="inline-flex min-h-12 items-center border-b border-border font-medium">
+                      {item.label}
+                    </Link>
+                  ))}
+                  <Link href="/contact" className="btn-primary">
+                    Talk to an advisor
+                  </Link>
+                </div>
               </div>
-              {nav.slice(1).map((item) => (
-                <Link key={item.href} href={item.href} className="inline-flex min-h-12 items-center border-b border-border font-medium">
-                  {item.label}
-                </Link>
-              ))}
-              <Link
-                href="/contact"
-                className="btn-primary"
-              >
-                Talk to an advisor
-              </Link>
-            </div>
-          </div>
-        </div>
-      ) : null}
+            </div>,
+            document.body
+          )
+        : null}
     </header>
   )
 }

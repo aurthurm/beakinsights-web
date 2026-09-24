@@ -1,6 +1,7 @@
 export type ServiceSlug =
   | "it-consulting"
   | "informatics-and-data"
+  | "ai-and-intelligent-systems"
   | "healthcare-transformation"
 
 export type Service = {
@@ -18,7 +19,7 @@ export type Service = {
   problems: string[]
   capabilities: { name: string; summary: string }[]
   method: string[]
-  diagram: "architecture" | "information" | "workflow"
+  diagram: "architecture" | "information" | "ai" | "workflow"
   diagramTitle: string
   diagramCaption: string
   tone: "navy" | "teal" | "healthcare"
@@ -112,9 +113,9 @@ export const services: Service[] = [
           "Analysis designed around a decision, with a known source, grain, and limit.",
       },
       {
-        name: "AI readiness and governance",
+        name: "AI readiness and data foundations",
         summary:
-          "What information would be used, where a person remains accountable, what is measured, and how risk is governed.",
+          "Assess whether the information, permissions, quality, lineage, and operating controls are strong enough to support AI safely.",
       },
     ],
     method: ["Discover the flow", "Model the meaning", "Design the exchange", "Implement the path", "Measure the decision"],
@@ -123,6 +124,70 @@ export const services: Service[] = [
     diagramTitle: "From data flow to decision flow",
     diagramCaption:
       "Informatics work traces a fact from its source, through definition and exchange, to the decision that depends on it.",
+  },
+  {
+    slug: "ai-and-intelligent-systems",
+    name: "AI & Intelligent Systems",
+    shortLabel: "AI & Intelligent Systems",
+    navSummary: "AI strategy, RAG, agentic systems, governance and production delivery.",
+    cardLine: "Move AI from experiments into governed, useful systems.",
+    topics: "Strategy · RAG · Agents · Governance",
+    href: "/what-we-do/ai-and-intelligent-systems",
+    title: "AI Strategy, RAG & Agentic Systems Consulting | Beak Insights",
+    description:
+      "AI strategy and implementation consulting across generative AI, retrieval-augmented generation, agentic systems, AI governance, evaluation and enterprise integration.",
+    h1: "AI systems designed for real work.",
+    lede:
+      "We help organizations choose where AI creates value, build the data and knowledge foundations behind it, and design production systems that can be evaluated, governed and operated.",
+    problems: [
+      "AI pilots that demonstrate a model but do not change a decision, workflow, or measurable outcome",
+      "RAG and generative AI systems that retrieve the wrong context, expose sensitive information, or cannot be evaluated consistently",
+      "Agents given tools and autonomy without clear permissions, human oversight, observability, or a safe operating model",
+    ],
+    capabilities: [
+      {
+        name: "AI strategy and use-case portfolio",
+        summary:
+          "Prioritize the decisions and workflows where AI is worth using, define the expected value, and choose what should be assisted, augmented, or automated.",
+      },
+      {
+        name: "Generative AI and RAG",
+        summary:
+          "Knowledge-grounded assistants and applications using retrieval, enterprise search, context design, citations, access controls, and evaluation rather than unsupported model output.",
+      },
+      {
+        name: "Agentic systems and orchestration",
+        summary:
+          "Agents that can plan, retrieve, call tools, collaborate, and act within explicit boundaries—with human approval where the consequence requires it.",
+      },
+      {
+        name: "AI engineering and enterprise integration",
+        summary:
+          "Production architecture for models, APIs, tools, identity, data, workflows, and existing applications, including model gateways and standards such as MCP where they are useful.",
+      },
+      {
+        name: "Evaluation, LLMOps and observability",
+        summary:
+          "Test sets, quality measures, tracing, cost and latency monitoring, prompt and model versioning, and feedback loops that make AI behavior visible enough to operate.",
+      },
+      {
+        name: "Responsible AI, governance and safety",
+        summary:
+          "Risk classification, privacy and security controls, human accountability, auditability, model and agent guardrails, and governance appropriate to the consequence of the use case.",
+      },
+    ],
+    method: [
+      "Frame the outcome",
+      "Assess data and AI readiness",
+      "Design architecture and guardrails",
+      "Build and evaluate",
+      "Integrate, operate and scale",
+    ],
+    diagram: "ai",
+    tone: "teal",
+    diagramTitle: "From trusted knowledge to governed action",
+    diagramCaption:
+      "AI systems connect trusted enterprise knowledge to retrieval, models, agents and tools, while evaluation, permissions and human oversight constrain what can become an action.",
   },
   {
     slug: "healthcare-transformation",

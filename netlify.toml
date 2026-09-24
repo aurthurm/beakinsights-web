@@ -1,0 +1,3 @@
+[build.environment]
+  NODE_VERSION = "22.13.0"
+  PNPM_VERSION = "8.15.0"

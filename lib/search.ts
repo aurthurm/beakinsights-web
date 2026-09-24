@@ -14,7 +14,7 @@ const pages: SearchHit[] = [
   {
     title: "What we do",
     href: "/what-we-do",
-    summary: "IT consulting, informatics and data, and healthcare transformation.",
+    summary: "IT consulting, AI and intelligent systems, informatics and data, and healthcare transformation.",
     kind: "Service",
   },
   ...aboutLinks.map((link) => ({
@@ -26,13 +26,13 @@ const pages: SearchHit[] = [
   {
     title: "Contact",
     href: "/contact",
-    summary: "Talk to Beak Insights about an IT, informatics, data, or healthcare challenge.",
+    summary: "Talk to Beak Insights about an IT, AI, informatics, data, or healthcare challenge.",
     kind: "Contact",
   },
   {
     title: "Careers",
     href: "/careers",
-    summary: "Consulting roles across technology, informatics, and healthcare.",
+    summary: "Consulting roles across technology, AI, informatics, and healthcare.",
     kind: "Careers",
   },
 ]
