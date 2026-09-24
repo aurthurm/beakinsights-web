@@ -1,36 +1,63 @@
-import { Inter } from 'next/font/google'
-import { ThemeProvider } from '@/components/theme-provider'
-import { Navigation } from '@/components/navigation'
-import { Footer } from '@/components/footer'
-import './globals.css'
+import type { Metadata } from "next"
+import type { ReactNode } from "react"
+import { Source_Sans_3, Source_Serif_4 } from "next/font/google"
+import { CookieNotice } from "@/components/cookie-notice"
+import { JsonLd } from "@/components/json-ld"
+import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
+import { site } from "@/content/site"
+import "./globals.css"
 
-const inter = Inter({ subsets: ['latin'] })
+const sans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+})
 
-export const metadata = {
-  title: 'Beak Insights - Data, Design & Development Services',
-  description: 'Transform raw data into actionable insights with Beak Insights.',
+const serif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+})
+
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  title: {
+    default: "Beak Insights | IT, Informatics & Healthcare Consulting",
+    template: "%s",
+  },
+  description: site.description,
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+      <body className="font-sans">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: site.name,
+            url: site.url,
+            email: site.email,
+            telephone: site.phone,
+            description: site.description,
+          }}
+        />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-card focus:px-4 focus:py-3"
         >
-          <div className="flex min-h-screen flex-col px-4 md:px-0">
-            <Navigation />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+          Skip to content
+        </a>
+        <div className="flex min-h-screen flex-col">
+          <SiteHeader />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </div>
+        <CookieNotice />
       </body>
     </html>
   )
