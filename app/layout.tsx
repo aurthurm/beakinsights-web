@@ -24,7 +24,7 @@ const serif = Source_Serif_4({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Beak Insights | IT, Informatics & Healthcare Consulting",
+    default: "Beak Insights | IT, AI, Informatics & Healthcare Consulting",
     template: "%s",
   },
   description: site.description,
