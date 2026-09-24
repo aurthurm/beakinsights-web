@@ -16,7 +16,7 @@ export function SiteFooter() {
             Beak Insights
           </p>
           <p className="mt-3 text-sm text-on-ink">
-            Technology, informatics, and healthcare consulting from strategy through implementation.
+            Technology, AI, informatics, and healthcare consulting from strategy through implementation.
           </p>
         </div>
         <div>

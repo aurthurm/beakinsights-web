@@ -7,7 +7,7 @@ import { pageMeta } from "@/lib/seo"
 export const metadata = pageMeta({
   title: "Consulting Services | Beak Insights",
   description:
-    "Explore Beak Insights services across IT consulting, informatics, data and healthcare transformation.",
+    "Explore Beak Insights services across IT consulting, AI and intelligent systems, informatics, data and healthcare transformation.",
   path: "/what-we-do",
 })
 
@@ -19,9 +19,9 @@ export default function WhatWeDoPage() {
         Consulting that connects strategy, systems and delivery.
       </h1>
       <p className="measure mt-6 text-lg">
-        Some problems are technical. Others are operational, informational or clinical. The difficult ones are usually all four. We work across those boundaries.
+        Some problems are technical. Others are operational, informational, AI-enabled or clinical. The difficult ones cross those boundaries. We work across them from strategy through implementation.
       </p>
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {services.map((service) => (
           <article
             key={service.slug}
@@ -44,7 +44,7 @@ export default function WhatWeDoPage() {
       <section className="mt-16">
         <h2 className="font-serif text-3xl">How our disciplines connect</h2>
         <p className="measure mt-4">
-          IT consulting sets a target state that can be delivered. Informatics makes the information in that state trustworthy and exchangeable. Healthcare transformation applies both to workflows where the cost of a disconnected system is operational and clinical.
+          IT consulting sets a target state that can be delivered. Informatics makes the information in that state trustworthy and exchangeable. AI & Intelligent Systems turns trusted knowledge and workflows into governed AI applications, RAG and agentic systems. Healthcare transformation applies those capabilities where technology, information and workflow have operational and clinical consequences.
         </p>
       </section>
       <section className="mt-16">

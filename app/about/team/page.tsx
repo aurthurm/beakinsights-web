@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo"
 
 export const metadata = pageMeta({
   title: "Our Team | Beak Insights",
-  description: "Beak Insights is a versatile team working across IT, informatics, and healthcare from strategy through implementation.",
+  description: "Beak Insights is a versatile team working across IT, AI, informatics, and healthcare from strategy through implementation.",
   path: "/about/team",
 })
 
@@ -25,7 +25,7 @@ export default function TeamPage() {
       <section className="mt-12 max-w-3xl">
         <h2 className="font-serif text-3xl">How the team is assembled</h2>
         <p className="mt-4">
-          An engagement draws the people the problem needs: architecture, informatics, a healthcare workflow, or all three. The public site describes that practice. It does not list personal names.
+          An engagement draws the people the problem needs: architecture, AI engineering, informatics, a healthcare workflow, or a combination of them. The public site describes that practice. It does not list personal names.
         </p>
       </section>
     </div>

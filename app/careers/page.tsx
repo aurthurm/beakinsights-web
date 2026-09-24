@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo"
 export const metadata = pageMeta({
   title: "Careers at Beak Insights",
   description:
-    "Join Beak Insights and work across technology, informatics and healthcare consulting from strategy through implementation.",
+    "Join Beak Insights and work across technology, AI, informatics and healthcare consulting from strategy through implementation.",
   path: "/careers",
 })
 
@@ -23,7 +23,7 @@ export default function CareersPage() {
       </section>
       <section className="mt-10">
         <h2 className="font-serif text-3xl">Areas of practice</h2>
-        <p className="measure mt-4">IT consulting, informatics and data, and healthcare transformation. Most useful people can work in more than one of those without treating them as separate industries.</p>
+        <p className="measure mt-4">IT consulting, AI and intelligent systems, informatics and data, and healthcare transformation. Most useful people can work across more than one of those without treating them as isolated disciplines.</p>
       </section>
       <section className="mt-10">
         <h2 className="font-serif text-3xl">Open roles</h2>
