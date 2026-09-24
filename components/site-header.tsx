@@ -70,7 +70,7 @@ export function SiteHeader() {
   }, [servicesOpen])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-background">
       <nav aria-label="Primary" className="container flex h-16 items-center justify-between gap-4 md:h-20">
         <Link href="/" className="inline-flex items-center gap-2 font-serif text-xl tracking-tight text-ink no-underline md:text-2xl">
           <span className="mark" aria-hidden="true" />
