@@ -57,15 +57,6 @@ export function SiteFooter() {
             </li>
             <li>
               <a
-                href={site.phoneHref}
-                className="inline-flex min-h-11 items-center underline-offset-4 hover:underline"
-                onClick={() => track("phone_click", { page: "footer" })}
-              >
-                {site.phone}
-              </a>
-            </li>
-            <li>
-              <a
                 href={site.whatsappHref}
                 className="inline-flex min-h-11 items-center underline-offset-4 hover:underline"
               >

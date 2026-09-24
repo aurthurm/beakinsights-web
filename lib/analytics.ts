@@ -7,7 +7,6 @@ export type AnalyticsEvent =
   | "contact_submit"
   | "contact_error"
   | "email_click"
-  | "phone_click"
   | "filter_resource"
   | "internal_search"
 

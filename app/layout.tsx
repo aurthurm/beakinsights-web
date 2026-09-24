@@ -42,7 +42,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               name: site.name,
               url: site.url,
               email: site.email,
-              telephone: site.phone,
               description: site.description,
             }}
           />
