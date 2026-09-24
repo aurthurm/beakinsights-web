@@ -86,20 +86,22 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         </ol>
       </section>
 
-      <section className="mt-16">
-        <h2 className="font-serif text-3xl">Relevant work</h2>
-        <ul className="mt-4 space-y-4">
-          {relatedCases.map((item) => (
-            <li key={item.slug} className="border border-border p-5">
-              <h3 className="font-serif text-2xl">{item.title}</h3>
-              <p className="mt-2">{item.outcome}</p>
-              <Link href={`/work/${item.slug}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-medium">
-                Read the case study
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {relatedCases.length > 0 ? (
+        <section className="mt-16">
+          <h2 className="font-serif text-3xl">Relevant work</h2>
+          <ul className="mt-4 space-y-4">
+            {relatedCases.map((item) => (
+              <li key={item.slug} className="border border-border p-5">
+                <h3 className="font-serif text-2xl">{item.title}</h3>
+                <p className="mt-2">{item.outcome}</p>
+                <Link href={`/work/${item.slug}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-medium">
+                  Read the case study
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="mt-16">
         <h2 className="font-serif text-3xl">Expertise</h2>
@@ -109,18 +111,20 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         </Link>
       </section>
 
-      <section className="mt-16">
-        <h2 className="font-serif text-3xl">Related insights</h2>
-        <ul className="mt-4 space-y-3">
-          {relatedInsights.map((item) => (
-            <li key={item.slug}>
-              <Link href={`/insights/${item.slug}`} className="underline underline-offset-4">
-                {item.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {relatedInsights.length > 0 ? (
+        <section className="mt-16">
+          <h2 className="font-serif text-3xl">Related insights</h2>
+          <ul className="mt-4 space-y-3">
+            {relatedInsights.map((item) => (
+              <li key={item.slug}>
+                <Link href={`/insights/${item.slug}`} className="underline underline-offset-4">
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="mt-16 flex flex-col gap-4 border border-border p-6 md:flex-row md:items-center md:justify-between">
         <h2 className="font-serif text-3xl">Have a similar challenge?</h2>
