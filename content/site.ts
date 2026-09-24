@@ -7,9 +7,9 @@ export const site = {
   whatsapp: "+263 71 306 9794",
   whatsappHref: "https://wa.me/263713069794",
   description:
-    "Beak Insights helps organizations design, modernize, integrate and improve technology, informatics and healthcare systems from strategy through implementation.",
+    "Beak Insights helps organizations design, modernize, integrate and improve technology, AI, informatics and healthcare systems from strategy through implementation.",
   proposition:
-    "A rigorous, execution-minded consultancy that connects technology, informatics, and healthcare—from strategy through implementation and measurable improvement.",
+    "A rigorous, execution-minded consultancy that connects technology, AI, informatics, and healthcare—from strategy through implementation and measurable improvement.",
 } as const
 
 export const nav = [
@@ -87,6 +87,6 @@ export const engagements = [
   },
 ] as const
 
-export type Need = "IT" | "Informatics & Data" | "Healthcare" | "Other"
+export type Need = "IT" | "Informatics & Data" | "AI & Intelligent Systems" | "Healthcare" | "Other"
 
-export const needs: Need[] = ["IT", "Informatics & Data", "Healthcare", "Other"]
+export const needs: Need[] = ["IT", "Informatics & Data", "AI & Intelligent Systems", "Healthcare", "Other"]
