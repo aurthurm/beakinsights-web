@@ -74,7 +74,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background">
       <nav aria-label="Primary" className="container flex h-16 items-center justify-between gap-4 md:h-20">
         <Link href="/" className="inline-flex items-center gap-2 font-serif text-xl tracking-tight text-ink no-underline md:text-2xl">
-          <span className="mark" aria-hidden="true" />
+          <img src="/logo.svg" alt="" width={28} height={40} className="h-9 w-auto" />
           Beak Insights
         </Link>
 
@@ -181,7 +181,10 @@ export function SiteHeader() {
                 className="relative z-10 flex h-full w-full max-w-sm flex-col overflow-y-auto bg-background p-5 text-foreground"
               >
                 <div className="flex items-center justify-between">
-                  <p className="font-serif text-xl">Beak Insights</p>
+                  <p className="inline-flex items-center gap-2 font-serif text-xl">
+                    <img src="/logo.svg" alt="" width={22} height={32} className="h-8 w-auto" />
+                    Beak Insights
+                  </p>
                   <button
                     ref={closeButtonRef}
                     type="button"
