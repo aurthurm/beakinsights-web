@@ -16,8 +16,19 @@ export function SiteFooter() {
             Beak Insights
           </p>
           <p className="mt-3 text-sm text-on-ink">
-            Technology, AI, informatics, and healthcare consulting from strategy through implementation.
+            African technology consultancy combining advisory, engineering, data, AI and deep health and laboratory informatics expertise.
           </p>
+          <div className="mt-4 flex flex-wrap gap-x-4 text-sm">
+            <Link href="/about" className="inline-flex min-h-11 items-center underline-offset-4 hover:underline">
+              About
+            </Link>
+            <Link href="/about/culture" className="inline-flex min-h-11 items-center underline-offset-4 hover:underline">
+              Culture
+            </Link>
+            <Link href="/careers" className="inline-flex min-h-11 items-center underline-offset-4 hover:underline">
+              Careers
+            </Link>
+          </div>
         </div>
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-gold">Services</h2>
