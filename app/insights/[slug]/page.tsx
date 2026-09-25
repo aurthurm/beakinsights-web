@@ -5,18 +5,20 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JsonLd } from "@/components/json-ld"
 import { TrackView } from "@/components/track-view"
 import { getCase } from "@/content/cases"
-import { getInsight, insights } from "@/content/insights"
 import { getService } from "@/content/services"
 import { site } from "@/content/site"
+import { InsightBody } from "@/components/insight-body"
+import { getInsight, getInsights } from "@/lib/insights"
 import { pageMeta } from "@/lib/seo"
 
 export function generateStaticParams() {
-  return insights.map((item) => ({ slug: item.slug }))
+  return getInsights().map((item) => ({ slug: item.slug }))
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const item = getInsight(params.slug)
-  if (!item) return {}
+  const entry = getInsight(params.slug)
+  if (!entry) return {}
+  const { insight: item } = entry
   return pageMeta({
     title: `${item.title} | Beak Insights`,
     description: item.description,
@@ -25,15 +27,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 }
 
 export default function InsightPage({ params }: { params: { slug: string } }) {
-  const item = getInsight(params.slug)
-  if (!item) notFound()
+  const entry = getInsight(params.slug)
+  if (!entry) notFound()
+  const { insight: item, body } = entry
   const service = getService(item.topic)
   const relatedCase = item.caseSlug ? getCase(item.caseSlug) : undefined
   const url = new URL(`/insights/${item.slug}`, site.url).toString()
 
   return (
     <article className="container py-12 md:py-16">
-      <TrackView event="view_insight" params={{ topic: item.topic, author: "beak-insights", type: item.type }} />
+      <TrackView event="view_insight" params={{ topic: item.topic, author: item.author, type: item.type }} />
       <Breadcrumbs
         items={[
           { name: "Insights", href: "/insights" },
@@ -47,12 +50,10 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
       <p className="mt-4 text-sm text-muted-foreground">
         <time dateTime={item.date}>Published {item.date}</time>
         {item.updated !== item.date ? <span> · Updated {item.updated}</span> : null}
-        <span> · Beak Insights</span>
+        <span> · {item.author}</span>
       </p>
-      <div className="measure mt-8 space-y-5">
-        {item.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+      <div className="insight-body measure mt-8">
+        <InsightBody source={body} />
       </div>
       <aside className="mt-12 max-w-2xl border border-border p-6">
         <h2 className="font-serif text-2xl">Continue</h2>
@@ -91,7 +92,7 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
           description: item.description,
           datePublished: item.date,
           dateModified: item.updated,
-          author: { "@type": "Organization", name: site.name, url: site.url },
+          author: { "@type": "Organization", name: item.author, url: site.url },
           mainEntityOfPage: url,
           publisher: { "@type": "Organization", name: site.name, url: site.url },
         }}
