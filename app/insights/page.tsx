@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { Suspense } from "react"
 import { ResourceFilters } from "@/components/resource-filters"
-import { insights, type InsightType } from "@/content/insights"
 import { services, type ServiceSlug } from "@/content/services"
+import { getInsights, type InsightType } from "@/lib/insights"
 import { pageMeta } from "@/lib/seo"
 
 export const metadata = pageMeta({
@@ -21,7 +21,7 @@ export default function InsightsPage({
 }) {
   const topic = searchParams.topic || ""
   const type = searchParams.type || ""
-  const visible = insights.filter((item) => {
+  const visible = getInsights().filter((item) => {
     const topicMatch = topic ? item.topic === (topic as ServiceSlug) : true
     const typeMatch = type ? item.type === type : true
     return topicMatch && typeMatch

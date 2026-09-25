@@ -89,6 +89,64 @@
     @apply max-w-measure;
   }
 
+  .insight-body p,
+  .insight-body ul,
+  .insight-body ol,
+  .insight-body blockquote,
+  .insight-body pre,
+  .insight-body table {
+    @apply my-5;
+  }
+
+  .insight-body h2 {
+    @apply mb-4 mt-10 font-serif text-3xl;
+  }
+
+  .insight-body h3 {
+    @apply mb-3 mt-8 font-serif text-2xl;
+  }
+
+  .insight-body a {
+    @apply underline;
+  }
+
+  .insight-body ul {
+    @apply list-disc pl-6;
+  }
+
+  .insight-body ol {
+    @apply list-decimal pl-6;
+  }
+
+  .insight-body li {
+    @apply mb-2;
+  }
+
+  .insight-body blockquote {
+    @apply border-l-4 border-gold pl-5 italic;
+  }
+
+  .insight-body pre {
+    @apply overflow-x-auto bg-ink p-4 text-sm text-white;
+  }
+
+  .insight-body :not(pre) > code {
+    @apply rounded bg-mist px-1 text-sm;
+  }
+
+  .insight-body table {
+    @apply block max-w-full overflow-x-auto;
+  }
+
+  .insight-body th,
+  .insight-body td {
+    @apply border border-border px-3 py-2 text-left;
+  }
+
+  .insight-body img {
+    @apply my-6 h-auto max-w-full;
+  }
+
   .field {
     @apply min-h-12 w-full border border-input bg-card px-3 py-3 text-base text-graphite;
   }

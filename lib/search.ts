@@ -1,5 +1,5 @@
 import { cases } from "@/content/cases"
-import { insights } from "@/content/insights"
+import { getInsights } from "@/lib/insights"
 import { services } from "@/content/services"
 import { aboutLinks } from "@/content/site"
 
@@ -53,7 +53,7 @@ export function searchContent(query: string): SearchHit[] {
       summary: item.deck,
       kind: "Case study",
     })),
-    ...insights.map((item) => ({
+    ...getInsights().map((item) => ({
       title: item.title,
       href: `/insights/${item.slug}`,
       summary: item.description,

@@ -1,0 +1,34 @@
+---
+title: "Design the information flow before you design the dashboard"
+description: "A dashboard cannot repair a fact that has no owner, no stable definition, and no reliable path from the system that created it."
+topic: "informatics-and-data"
+topicLabel: "Informatics & Data"
+type: "Brief"
+date: "2026-09-24"
+updated: "2026-09-24"
+author: "Beak Insights"
+caseSlug: "beakdash"
+order: 2
+---
+
+When an analytics request arrives, the visible object is usually a dashboard. The difficult object is the path the fact took before it reached the chart. If that path is unclear, the dashboard becomes a faster way to disagree.
+
+## Start with the decision
+
+Start with the decision. Who needs to act, what would they do differently, and which fact would have to be true for that action to be responsible? A chart that does not answer a named question is decoration, even when the query behind it is technically correct.
+
+## Trace the source and definition
+
+Then find the source. The useful question is not “which warehouse table is convenient?” It is “which system records this fact as part of the work?” A downstream extract can be a reasonable place to read the fact. It is a poor place to invent the fact’s meaning.
+
+Definitions are an operating problem. Two teams can query the same column and mean different events: ordered, collected, resulted, released, billed. Until those words are stable, a shared dashboard increases confidence without increasing agreement. Governance, in this sense, is the record of who may change a definition and how everyone else will know.
+
+## Design the exchange
+
+Interoperability sits in the same sequence. If the decision depends on a fact moving between systems, the interface is part of the information design. A dashboard that hides a broken exchange will look complete and still be late.
+
+## Visualize only when the flow is clear
+
+Only then is a visualization the right tool. BeakDash, for example, is published as a way to present SQL data interactively. That is useful when the query is the question. It does not replace ownership of the underlying data, and this site does not claim that it does.
+
+The same discipline applies when someone asks for artificial intelligence on top of the data. The prior questions remain: which workflow changes, what information is used, where a person stays accountable, what will be measured, and how misuse is governed. A model is not a substitute for a flow that nobody trusts.

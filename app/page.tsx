@@ -4,7 +4,7 @@ import { QuietLink } from "@/components/motion/quiet-link"
 import { Reveal } from "@/components/motion/reveal"
 import { Stagger, StaggerItem } from "@/components/motion/stagger"
 import { cases } from "@/content/cases"
-import { insights } from "@/content/insights"
+import { getInsights } from "@/lib/insights"
 import { services } from "@/content/services"
 import { method } from "@/content/site"
 import { pageMeta } from "@/lib/seo"
@@ -137,7 +137,7 @@ export default function HomePage() {
             Insights from our practitioners
           </Reveal>
           <Stagger className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {insights.map((item) => (
+            {getInsights().map((item) => (
               <StaggerItem key={item.slug}>
                 <article className="h-full border-t-2 border-gold bg-white p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">
