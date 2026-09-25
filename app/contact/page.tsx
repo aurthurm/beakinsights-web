@@ -4,7 +4,8 @@ import { pageMeta } from "@/lib/seo"
 
 export const metadata = pageMeta({
   title: "Contact Beak Insights",
-  description: "Talk to Beak Insights about an IT, informatics, data or healthcare consulting challenge.",
+  description:
+    "Talk to Beak Insights about technology advisory, engineering, data, AI, health or laboratory informatics consulting.",
   path: "/contact",
 })
 
@@ -14,7 +15,7 @@ export default function ContactPage() {
       <div>
         <h1 className="font-serif text-4xl md:text-6xl">What are you trying to change?</h1>
         <p className="mt-6">
-          Tell us enough to understand the problem. We’ll route your enquiry to someone with the right domain experience.
+          Tell us enough to understand the problem, the current system and the outcome you need. We’ll route your enquiry to someone with the right mix of technical and domain experience.
         </p>
         <div className="mt-8">
           <ContactForm />
