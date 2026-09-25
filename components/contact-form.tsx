@@ -25,7 +25,7 @@ export function ContactForm() {
     status: "idle",
     message: "",
   } satisfies ContactState)
-  const [need, setNeed] = useState("IT")
+  const [need, setNeed] = useState<string>(needs[0])
   const started = useRef(false)
 
   useEffect(() => {
@@ -90,7 +90,7 @@ export function ContactForm() {
       >
         <textarea id="challenge" name="challenge" required maxLength={1500} rows={6} className="field" />
       </Field>
-      {need === "Healthcare" ? (
+      {need === "Health & Laboratory Informatics" ? (
         <p className="border border-gold/50 bg-sand px-4 py-3 text-sm text-ink">
           Please do not include patient, clinical or other sensitive personal information in this form.
         </p>

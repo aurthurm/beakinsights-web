@@ -28,27 +28,33 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "it-consulting",
-    name: "IT Consulting",
-    shortLabel: "IT Consulting",
-    navSummary: "Strategy, architecture, modernization and delivery.",
-    cardLine: "Make technology decisions that hold up in delivery.",
-    topics: "Strategy · Architecture · Modernization",
+    name: "Technology Advisory & Engineering",
+    shortLabel: "Technology & Engineering",
+    navSummary: "Strategy, architecture, software engineering, modernization and managed delivery.",
+    cardLine: "Connect technology decisions to working systems.",
+    topics: "Advisory · Architecture · Engineering · Delivery",
     href: "/what-we-do/it-consulting",
-    title: "IT Consulting Services | Beak Insights",
+    title: "Technology Advisory & Engineering Consulting | Beak Insights",
     description:
-      "IT strategy, architecture, modernization, integration and delivery consulting designed to turn technology complexity into reliable business capability.",
-    h1: "IT consulting built around business outcomes.",
-    lede: "We help teams make difficult technology decisions, define a workable target state and carry the decision through implementation—not leave it in a strategy deck.",
+      "Technology strategy, architecture, custom software engineering, modernization, integration and managed delivery consulting for complex organizations.",
+    h1: "Technology advisory that can survive engineering and delivery.",
+    lede:
+      "We help organizations make difficult technology decisions and carry them through architecture, engineering, integration and implementation—so strategy becomes dependable capability rather than another handoff.",
     problems: [
       "Strategy that never reaches an implementable target architecture",
-      "Modernization programs organized around vendors rather than business capability",
-      "Delivery risk that is discovered after the design is already frozen",
+      "Modernization programmes organized around vendors rather than business capability",
+      "Critical software or integrations that need accountable delivery, not only extra hands",
     ],
     capabilities: [
       {
-        name: "Strategy and architecture",
+        name: "Technology strategy and architecture",
         summary:
-          "Decisions about what to keep, replace, integrate, or stop—tied to the capabilities the organization actually needs.",
+          "Decisions about what to keep, replace, integrate, build, or stop—tied to the capabilities the organization actually needs.",
+      },
+      {
+        name: "Custom software and product engineering",
+        summary:
+          "Design and engineering of applications, platforms and services where the requirement is a working system rather than a recommendation alone.",
       },
       {
         name: "Modernization and integration",
@@ -56,74 +62,75 @@ export const services: Service[] = [
           "A path from the current estate to a target state, including the interfaces that have to keep working while the change happens.",
       },
       {
-        name: "Delivery assurance",
+        name: "Managed delivery and assurance",
         summary:
-          "Independent review of scope, architecture, dependencies, and whether the plan can still be delivered.",
+          "Accountable delivery of defined outcomes, or independent review of scope, architecture, dependencies, risk and readiness.",
       },
       {
         name: "Technology operating models",
         summary:
-          "Ownership, funding, and decision rights so the target state survives the project that created it.",
+          "Ownership, decision rights, delivery routines and capability so the target state survives the project that created it.",
       },
     ],
-    method: ["Discover the estate", "Choose the target state", "Sequence the change", "Assure delivery", "Measure capability"],
+    method: ["Discover the estate", "Choose the target state", "Design the path", "Build and integrate", "Operate and improve"],
     diagram: "architecture",
     tone: "navy",
-    diagramTitle: "Current state to target state",
+    diagramTitle: "Current state to working target state",
     diagramCaption:
-      "IT work starts by naming the systems and decisions in place today, then the target architecture those decisions have to become.",
+      "Technology work starts by naming the systems and decisions in place today, then connects the target architecture to the engineering and delivery path required to make it real.",
   },
   {
     slug: "informatics-and-data",
-    name: "Informatics & Data",
-    shortLabel: "Informatics & Data",
-    navSummary: "Governance, interoperability, analytics and decision systems.",
-    cardLine: "Make information usable, governed and connected.",
-    topics: "Govern · Connect · Decide",
+    name: "Data & Informatics",
+    shortLabel: "Data & Informatics",
+    navSummary: "Data strategy, governance, interoperability, analytics and decision systems.",
+    cardLine: "Turn fragmented information into trusted decision systems.",
+    topics: "Govern · Connect · Engineer · Decide",
     href: "/what-we-do/informatics-and-data",
-    title: "Informatics & Data Consulting | Beak Insights",
+    title: "Data & Informatics Consulting | Beak Insights",
     description:
-      "Informatics, data governance, interoperability, analytics and information strategy consulting for complex organizations.",
-    h1: "Make information usable, governed and connected.",
-    lede: "Better decisions rarely begin with another dashboard. They begin with trustworthy information, clear definitions, governed flows and systems that can exchange what matters.",
+      "Data strategy, informatics, governance, interoperability, data engineering, analytics and decision-support consulting for complex organizations.",
+    h1: "Make information trusted, connected and useful.",
+    lede:
+      "Better decisions rarely begin with another dashboard. They begin with trustworthy definitions, governed flows, dependable data engineering and systems that can exchange what matters.",
     problems: [
       "Fragmented systems that each hold a partial version of the same fact",
       "Low-trust data, unclear ownership, and definitions that change by team",
-      "Poor interoperability treated as a one-off interface project",
+      "Analytics and AI programmes built before the underlying information flow is reliable",
     ],
     capabilities: [
       {
-        name: "Information and data strategy",
+        name: "Data and information strategy",
         summary:
-          "Which information has to be reliable, who decides its meaning, and where it must arrive to change a decision.",
+          "Which information has to be reliable, who decides its meaning, where it comes from and where it must arrive to change a decision.",
       },
       {
         name: "Governance and quality",
         summary:
-          "Definitions, ownership, and quality checks that operators can run—not a committee that only publishes principles.",
+          "Definitions, ownership, lineage and quality checks that operators can run—not governance that exists only in a policy document.",
       },
       {
         name: "Interoperability and integration",
         summary:
-          "The flows, standards, and operating routines that let systems exchange what the work actually requires.",
+          "The flows, standards, APIs and operating routines that let systems exchange what the work actually requires.",
       },
       {
-        name: "Analytics and decision support",
+        name: "Data engineering and analytics",
         summary:
-          "Analysis designed around a decision, with a known source, grain, and limit.",
+          "Reliable pipelines, models and analytical products designed around a decision, with a known source, grain, quality and limit.",
       },
       {
         name: "AI readiness and data foundations",
         summary:
-          "Assess whether the information, permissions, quality, lineage, and operating controls are strong enough to support AI safely.",
+          "Assess whether information, permissions, quality, lineage and operating controls are strong enough to support AI safely.",
       },
     ],
-    method: ["Discover the flow", "Model the meaning", "Design the exchange", "Implement the path", "Measure the decision"],
+    method: ["Discover the flow", "Model the meaning", "Engineer the path", "Connect the systems", "Measure the decision"],
     diagram: "information",
     tone: "teal",
     diagramTitle: "From data flow to decision flow",
     diagramCaption:
-      "Informatics work traces a fact from its source, through definition and exchange, to the decision that depends on it.",
+      "Data and informatics work traces a fact from its source, through definition, engineering and exchange, to the decision that depends on it.",
   },
   {
     slug: "ai-and-intelligent-systems",
@@ -191,55 +198,56 @@ export const services: Service[] = [
   },
   {
     slug: "healthcare-transformation",
-    name: "Healthcare Transformation",
-    shortLabel: "Healthcare",
-    navSummary: "Digital health, health informatics, workflows and implementation.",
-    cardLine: "Healthcare transformation grounded in real workflows.",
-    topics: "Workflow · Informatics · Implementation",
+    name: "Health & Laboratory Informatics",
+    shortLabel: "Health & Laboratory Informatics",
+    navSummary: "Digital health, laboratory systems, interoperability, workflows, analytics and implementation.",
+    cardLine: "Deep domain expertise where health, laboratories, data and software meet.",
+    topics: "Digital health · LIMS · Interoperability · Intelligence",
     href: "/what-we-do/healthcare-transformation",
-    title: "Healthcare Technology & Informatics Consulting | Beak Insights",
+    title: "Health & Laboratory Informatics Consulting | Beak Insights",
     description:
-      "Healthcare consulting across digital health, informatics, interoperability, systems, workflows and implementation.",
-    h1: "Healthcare transformation grounded in real workflows.",
-    lede: "Healthcare transformation succeeds when technology fits the realities of care, operations and information—not when teams optimize one of those in isolation.",
+      "Health and laboratory informatics consulting across digital health, LIMS/LIS, instrument integration, interoperability, workflows, analytics and implementation.",
+    h1: "Health and laboratory systems grounded in real workflows.",
+    lede:
+      "This is where Beak goes deepest: connecting software engineering, informatics, interoperability, data and operational workflow across health and laboratory environments.",
     problems: [
-      "Technology choices made before the clinical or operational workflow is understood",
-      "Information that does not move between the teams, processes, and systems that share a patient pathway",
-      "Implementations that go live without adoption, governance, or a way to see whether care or operations improved",
+      "Technology choices made before the clinical, laboratory or operational workflow is understood",
+      "Orders, results and other critical information that do not move reliably between people, instruments and systems",
+      "Implementations that go live without adoption, governance, operational visibility or a way to see whether the service improved",
     ],
     capabilities: [
       {
-        name: "Digital health strategy",
+        name: "Digital health and laboratory strategy",
         summary:
-          "A target for digital change that names the workflow, the information, and the operating constraints together.",
+          "Target architectures and transformation roadmaps that connect workflows, information, systems, governance and implementation constraints.",
       },
       {
-        name: "Health informatics",
+        name: "LIMS/LIS and laboratory digitalisation",
         summary:
-          "Definitions, flows, and decision points inside care and laboratory settings, not a generic data strategy with a healthcare label.",
+          "Laboratory information systems, sample workflows, result lifecycle, quality controls and the operational design needed around them.",
       },
       {
-        name: "Clinical and operational workflow",
+        name: "Instrument and system interoperability",
         summary:
-          "The work as it is done—handoffs, exceptions, and the points where a system helps or gets in the way.",
+          "Interfaces across analysers, laboratory systems and health platforms using fit-for-purpose standards and integration patterns such as HL7, FHIR, ASTM and APIs.",
       },
       {
-        name: "Interoperability",
+        name: "Health data and intelligence",
         summary:
-          "How information moves between clinical, laboratory, and operational systems, including the standards and ownership required to keep it moving.",
+          "Data engineering, indicators, dashboards, GIS and decision-support products built from traceable definitions and operationally meaningful flows.",
       },
       {
-        name: "Implementation and adoption",
+        name: "Implementation, adoption and enablement",
         summary:
-          "Configuration, integration, training, and measurement so a system change survives contact with daily work.",
+          "Configuration, integration, training, transition and operating routines so a system change survives contact with daily work.",
       },
     ],
-    method: ["Map the workflow", "Name the information", "Design the change", "Implement with operators", "Measure adoption"],
+    method: ["Map the workflow", "Name the information", "Design the architecture", "Build and integrate", "Enable and measure"],
     diagram: "workflow",
     tone: "healthcare",
     diagramTitle: "Workflow before configuration",
     diagramCaption:
-      "Healthcare work follows the path from preparation, through the encounter or laboratory step, to the downstream action that depends on the result.",
+      "Health and laboratory work follows the path from the real operational workflow, through systems and information exchange, to the downstream action that depends on the result.",
   },
 ]
 

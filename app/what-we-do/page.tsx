@@ -5,9 +5,9 @@ import { services } from "@/content/services"
 import { pageMeta } from "@/lib/seo"
 
 export const metadata = pageMeta({
-  title: "Consulting Services | Beak Insights",
+  title: "Technology Consulting Services | Beak Insights",
   description:
-    "Explore Beak Insights services across IT consulting, AI and intelligent systems, informatics, data and healthcare transformation.",
+    "Explore Beak Insights services across technology advisory and engineering, data and informatics, AI, and health and laboratory informatics.",
   path: "/what-we-do",
 })
 
@@ -15,11 +15,11 @@ export default function WhatWeDoPage() {
   return (
     <div className="container py-12 md:py-16">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">What we do</p>
-      <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">
-        Consulting that connects strategy, systems and delivery.
+      <h1 className="mt-4 max-w-4xl font-serif text-4xl md:text-6xl">
+        Advisory and engineering for systems that have to work.
       </h1>
       <p className="measure mt-6 text-lg">
-        Some problems are technical. Others are operational, informational, AI-enabled or clinical. The difficult ones cross those boundaries. We work across them from strategy through implementation.
+        Beak combines strategy, architecture, engineering, data, AI and domain expertise in one delivery model. We can enter at diagnosis, design, implementation, assurance or continuous improvement—and connect those stages when the problem needs end-to-end ownership.
       </p>
       <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {services.map((service) => (
@@ -41,16 +41,18 @@ export default function WhatWeDoPage() {
           </article>
         ))}
       </div>
+
       <section className="mt-16">
-        <h2 className="font-serif text-3xl">How our disciplines connect</h2>
+        <h2 className="font-serif text-3xl">One model, four connected practices</h2>
         <p className="measure mt-4">
-          IT consulting sets a target state that can be delivered. Informatics makes the information in that state trustworthy and exchangeable. AI & Intelligent Systems turns trusted knowledge and workflows into governed AI applications, RAG and agentic systems. Healthcare transformation applies those capabilities where technology, information and workflow have operational and clinical consequences.
+          Technology Advisory & Engineering defines and builds the target state. Data & Informatics makes information trustworthy, connected and usable. AI & Intelligent Systems turns trusted data, knowledge and workflows into governed intelligent applications. Health & Laboratory Informatics brings those capabilities together in a domain where workflow, interoperability and operational reliability matter deeply.
         </p>
       </section>
+
       <section className="mt-16">
-        <h2 className="font-serif text-3xl">Engagement models</h2>
+        <h2 className="font-serif text-3xl">Ways to engage</h2>
         <p className="measure mt-4">
-          Engagements are scoped to the problem. Beak Insights does not publish a rate card.
+          Some clients need a short diagnostic. Others need a team accountable for delivery. Engagements are shaped around the outcome rather than forcing every problem into the same consulting package.
         </p>
         <ul className="mt-6 grid gap-4 md:grid-cols-2">
           {engagements.map((item) => (
@@ -62,6 +64,7 @@ export default function WhatWeDoPage() {
           ))}
         </ul>
       </section>
+
       <section className="mt-16">
         <h2 className="font-serif text-3xl">Related work</h2>
         <ul className="mt-4 space-y-3">

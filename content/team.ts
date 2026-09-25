@@ -1,19 +1,22 @@
 export const teamPractice = {
-  title: "A versatile team",
+  title: "A multidisciplinary practice",
   summary:
-    "Beak Insights is a small, versatile team. The same people can move from an architecture decision to the information flow, AI system, and workflow that has to carry it. We do not publish individual names, portraits, or biographies on this site.",
+    "Beak Insights is building a compact, multidisciplinary consulting practice. Engagements can combine architecture, software engineering, data, AI, informatics and domain expertise without treating each discipline as a separate handoff. We do not publish individual names, portraits, or biographies on this site.",
   strengths: [
     {
-      name: "Range",
-      summary: "Technology, AI, informatics, and healthcare are treated as one problem when the work crosses those boundaries.",
+      name: "Range with depth",
+      summary:
+        "The team can work across technology, data and AI while going especially deep in health, laboratory systems, interoperability and information-intensive operations.",
     },
     {
-      name: "Delivery",
-      summary: "The team stays close to implementation, integration, evaluation, and the point where a decision has to work in practice.",
+      name: "Delivery ownership",
+      summary:
+        "We stay close to engineering, integration, implementation, evaluation and the point where a decision has to work in practice.",
     },
     {
-      name: "Judgment",
-      summary: "Recommendations stay specific to the system, the information, the risk, and the people who have to operate them.",
+      name: "Context and judgment",
+      summary:
+        "Recommendations stay specific to the workflow, system, information, risk and people who will operate the result.",
     },
   ],
 } as const

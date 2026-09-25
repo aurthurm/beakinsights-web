@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/work",
     "/insights",
     "/about",
+    "/about/culture",
     "/about/team",
     "/about/how-we-work",
     "/careers",
@@ -27,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...paths.map((path) => ({
       url: new URL(path, site.url).toString(),
-      lastModified: new Date("2026-09-24"),
+      lastModified: new Date("2026-09-25"),
     })),
     ...getInsights().map((item) => ({
       url: new URL(`/insights/${item.slug}`, site.url).toString(),
