@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useId, useRef, useState } from "react"
 import { createPortal } from "react-dom"
+import { BrandIcon } from "@/components/brand-media"
 import { services } from "@/content/services"
 import { nav } from "@/content/site"
 import { cn } from "@/lib/utils"
@@ -73,9 +74,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background">
       <nav aria-label="Primary" className="container flex h-16 items-center justify-between gap-4 md:h-20">
-        <Link href="/" className="inline-flex items-center gap-2 font-serif text-xl tracking-tight text-ink no-underline md:text-2xl">
-          <img src="/logo.svg" alt="" width={28} height={40} className="h-9 w-auto" />
-          Beak Insights
+        <Link href="/" className="inline-flex items-center no-underline">
+          <img src="/logo-horizontal.svg" alt="Beak Insights" className="h-9 w-auto md:h-11" />
         </Link>
 
         <div className="hidden items-center gap-6 lg:flex">
@@ -113,9 +113,12 @@ export function SiteHeader() {
                 <ul className="mt-4 space-y-4">
                   {services.map((service) => (
                     <li key={service.slug}>
-                      <Link href={service.href} className="block min-h-11" onClick={() => setServicesOpen(false)}>
-                        <span className="font-medium">{service.name}</span>
-                        <span className="mt-1 block text-sm text-muted-foreground">{service.navSummary}</span>
+                      <Link href={service.href} className="flex min-h-11 gap-3" onClick={() => setServicesOpen(false)}>
+                        {service.icon ? <BrandIcon name={service.icon} className="h-10 w-10 shrink-0" /> : null}
+                        <span>
+                          <span className="font-medium">{service.name}</span>
+                          <span className="mt-1 block text-sm text-muted-foreground">{service.navSummary}</span>
+                        </span>
                       </Link>
                     </li>
                   ))}
@@ -181,10 +184,7 @@ export function SiteHeader() {
                 className="relative z-10 flex h-full w-full max-w-sm flex-col overflow-y-auto bg-background p-5 text-foreground"
               >
                 <div className="flex items-center justify-between">
-                  <p className="inline-flex items-center gap-2 font-serif text-xl">
-                    <img src="/logo.svg" alt="" width={22} height={32} className="h-8 w-auto" />
-                    Beak Insights
-                  </p>
+                  <img src="/logo-horizontal.svg" alt="Beak Insights" className="h-9 w-auto" />
                   <button
                     ref={closeButtonRef}
                     type="button"
@@ -217,9 +217,12 @@ export function SiteHeader() {
                       <ul className="mb-3 space-y-2 pl-3">
                         {services.map((service) => (
                           <li key={service.slug}>
-                            <Link href={service.href} className="block py-2 text-sm">
-                              <span className="font-medium">{service.name}</span>
-                              <span className="mt-1 block text-muted-foreground">{service.navSummary}</span>
+                            <Link href={service.href} className="flex gap-3 py-2 text-sm">
+                              {service.icon ? <BrandIcon name={service.icon} className="h-10 w-10 shrink-0" /> : null}
+                              <span>
+                                <span className="font-medium">{service.name}</span>
+                                <span className="mt-1 block text-muted-foreground">{service.navSummary}</span>
+                              </span>
                             </Link>
                           </li>
                         ))}

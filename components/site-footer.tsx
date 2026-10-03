@@ -11,10 +11,7 @@ export function SiteFooter() {
     <footer className="bg-ink text-white">
       <div className="container grid gap-10 py-12 md:grid-cols-4">
         <div>
-          <p className="inline-flex items-center gap-2 font-serif text-xl text-white">
-            <img src="/logo-white.png" alt="" width={22} height={32} className="h-8 w-auto" />
-            Beak Insights
-          </p>
+          <img src="/logo-horizontal-reversed.svg" alt="Beak Insights" className="h-10 w-auto" />
           <p className="mt-3 text-sm text-on-ink">
             African technology consultancy combining advisory, engineering, data, AI and deep health and laboratory informatics expertise.
           </p>

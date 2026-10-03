@@ -177,7 +177,7 @@ export const legalPages: LegalPage[] = [
       {
         heading: "Known limits",
         paragraphs: [
-          "Diagrams are inline SVG with a text equivalent beside them. If a diagram and its text disagree, the text is the version to rely on.",
+          "Diagrams are images with a text equivalent beside them. If a diagram and its text disagree, the text is the version to rely on.",
           "The trust row is a set of inactive placeholders. It is not a list of clients or certifications.",
           "This statement is not a completed third-party audit.",
         ],

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Suspense } from "react"
+import { BrandIcon } from "@/components/brand-media"
 import { ResourceFilters } from "@/components/resource-filters"
 import { cases } from "@/content/cases"
 import { services, type ServiceSlug } from "@/content/services"
@@ -10,6 +11,8 @@ export const metadata = pageMeta({
   description:
     "Published systems from Beak Insights across laboratory information management, instrument connectivity, and SQL visualization.",
   path: "/work",
+  image: "/og/og-work.png",
+  imageAlt: "Selected work",
 })
 
 export default function WorkPage({
@@ -43,7 +46,8 @@ export default function WorkPage({
       <ul className="mt-6 grid gap-6 md:grid-cols-2">
         {visible.map((item) => (
           <li key={item.slug} className="border border-border p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            <BrandIcon name={item.icon} />
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               {item.sector}
             </p>
             <h2 className="mt-3 font-serif text-2xl">{item.title}</h2>

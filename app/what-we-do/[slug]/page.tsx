@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { BrandFigure, BrandIcon } from "@/components/brand-media"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ServiceDiagram } from "@/components/diagrams"
 import { TrackView } from "@/components/track-view"
@@ -21,6 +22,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: service.title,
     description: service.description,
     path: service.href,
+    image: service.ogImage,
+    imageAlt: service.name,
   })
 }
 
@@ -53,15 +56,32 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             Talk to an advisor
           </Link>
         </div>
-        <ServiceDiagram kind={service.diagram} caption={service.diagramCaption} />
+        {service.illustration && service.illustrationAlt ? (
+          <BrandFigure
+            src={service.illustration}
+            alt={service.illustrationAlt}
+            caption={service.diagramCaption}
+            width={1200}
+            height={800}
+            framed
+          />
+        ) : (
+          <ServiceDiagram kind={service.diagram} caption={service.diagramCaption} />
+        )}
       </div>
 
       <section className="mt-16">
         <h2 className="font-serif text-3xl">The problems we solve</h2>
         <ul className="mt-4 grid gap-4 md:grid-cols-3">
-          {service.problems.map((problem) => (
-            <li key={problem} className="border border-border p-4">{problem}</li>
-          ))}
+          {service.problems.map((problem, index) => {
+            const icon = service.problemIcons?.[index]
+            return (
+              <li key={problem} className="border border-border p-4">
+                {icon ? <BrandIcon name={icon} className="mb-3 h-10 w-10" /> : null}
+                {problem}
+              </li>
+            )
+          })}
         </ul>
       </section>
 

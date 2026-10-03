@@ -17,6 +17,10 @@ export type CaseStudy = {
   technology: string[]
   duration: null
   diagramNote: string
+  icon: string
+  illustration: string
+  illustrationAlt: string
+  ogImage: string
   titleMeta: string
   description: string
   externalUrl?: string
@@ -67,6 +71,11 @@ export const cases: CaseStudy[] = [
     duration: null,
     diagramNote:
       "The relevant flow is the sample path: receive the sample, perform the configured work, and record a traceable result.",
+    icon: "product-felicity-lims",
+    illustration: "/brand/illustrations/work-felicity-lims.svg",
+    illustrationAlt:
+      "Diagram: the Felicity LIMS sample lifecycle from receipt through registration, testing and verification to result.",
+    ogImage: "/og/og-felicity-lims.png",
     titleMeta: "Laboratory information management | Beak Insights",
     description:
       "How Beak Insights published Felicity LIMS, an open-source system for tracking laboratory samples, tests, and results.",
@@ -114,6 +123,11 @@ export const cases: CaseStudy[] = [
     duration: null,
     diagramNote:
       "The relevant flow is instrument, middleware, then laboratory information system. The middleware is the integration point, not a second system of record.",
+    icon: "product-felicity-lablink",
+    illustration: "/brand/illustrations/work-felicity-lablink.svg",
+    illustrationAlt:
+      "Diagram: laboratory instruments connect through Felicity LabLink over ASTM, HL7 and serial/TCP to a laboratory information system.",
+    ogImage: "/og/og-felicity-lablink.png",
     titleMeta: "Laboratory instrument connectivity | Beak Insights",
     description:
       "How Beak Insights published Felicity LabLink, open-source middleware connecting laboratory instruments to information systems.",
@@ -160,6 +174,10 @@ export const cases: CaseStudy[] = [
     duration: null,
     diagramNote:
       "The relevant flow is SQL source, then a view that answers one question. A chart without a stated question is not the point of the system.",
+    icon: "product-beakdash",
+    illustration: "/brand/illustrations/work-beakdash.svg",
+    illustrationAlt: "Diagram: an SQL query becomes an interactive dashboard of KPIs, bars and a trend line.",
+    ogImage: "/og/og-beakdash.png",
     titleMeta: "SQL visualization dashboard | Beak Insights",
     description:
       "How Beak Insights published BeakDash, a dashboard for visualizing SQL data with Apache ECharts.",

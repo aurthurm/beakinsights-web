@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { BrandIcon } from "@/components/brand-media"
 import { culturePrinciples, method, site } from "@/content/site"
 import { pageMeta } from "@/lib/seo"
 
@@ -7,6 +8,8 @@ export const metadata = pageMeta({
   description:
     "Beak Insights is an African technology consultancy combining advisory, engineering, data, AI and deep health and laboratory informatics expertise.",
   path: "/about",
+  image: "/og/og-about.png",
+  imageAlt: "About Beak Insights",
 })
 
 const depthAreas = [
@@ -49,6 +52,7 @@ export default function AboutPage() {
         <ol className="mt-4 grid gap-4 md:grid-cols-5">
           {method.map((step) => (
             <li key={step.name}>
+              <BrandIcon name={step.icon} className="mb-3 h-10 w-10" />
               <h3 className="font-serif text-xl">{step.name}</h3>
               <p className="mt-2 text-sm">{step.summary}</p>
             </li>

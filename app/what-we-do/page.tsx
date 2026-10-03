@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { BrandIcon } from "@/components/brand-media"
 import { cases } from "@/content/cases"
 import { engagements } from "@/content/site"
 import { services } from "@/content/services"
@@ -9,6 +10,8 @@ export const metadata = pageMeta({
   description:
     "Explore Beak Insights services across technology advisory and engineering, data and informatics, AI, and health and laboratory informatics.",
   path: "/what-we-do",
+  image: "/og/og-what-we-do.png",
+  imageAlt: "Consulting services",
 })
 
 export default function WhatWeDoPage() {
@@ -33,7 +36,8 @@ export default function WhatWeDoPage() {
                   : "border border-gold/40 bg-sand p-6"
             }
           >
-            <h2 className="font-serif text-3xl">{service.name}</h2>
+            {service.icon ? <BrandIcon name={service.icon} /> : null}
+            <h2 className={service.icon ? "mt-4 font-serif text-3xl" : "font-serif text-3xl"}>{service.name}</h2>
             <p className="mt-4">{service.lede}</p>
             <Link href={service.href} className="mt-6 inline-flex min-h-11 items-center text-sm font-medium">
               Explore {service.name}

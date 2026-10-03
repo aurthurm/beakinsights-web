@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="800"
+   viewBox="0 0 1200 800"
+   version="1.1"
+   id="svg20"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs24" />
+  <title
+     id="title2">What are you trying to change?</title>
+  <rect
+     width="1200"
+     height="800"
+     fill="#FFFFFF"
+     id="rect4" />
+  <path
+     d="M80,420 L102,428 L126,439 L154,342 L172,481 L194,372 L228,415 L259,416 L288,357 L316,486 L342,463 L371,342 L401,436 L424,336 L456,415"
+     fill="none"
+     stroke="#64748B"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     opacity="0.7"
+     id="path6" />
+  <path
+     d="M456,415 C616,415 640,400 760,400 L1000,400"
+     fill="none"
+     stroke="#0B1F44"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path8" />
+  <circle
+     cx="800.0"
+     cy="400.0"
+     r="5.0"
+     fill="#F4A62A"
+     id="circle10" />
+  <circle
+     cx="860.0"
+     cy="400.0"
+     r="7.0"
+     fill="#F4A62A"
+     id="circle12" />
+  <circle
+     cx="920.0"
+     cy="400.0"
+     r="9.0"
+     fill="#F4A62A"
+     id="circle14" />
+  <circle
+     cx="1060"
+     cy="400"
+     r="60"
+     fill="none"
+     stroke="#F4A62A"
+     stroke-width="4"
+     id="circle16" />
+  <circle
+     cx="1060.0"
+     cy="400.0"
+     r="22.0"
+     fill="#F4A62A"
+     id="circle18" />
+</svg>

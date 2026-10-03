@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { BrandFigure } from "@/components/brand-media"
 import { culturePrinciples } from "@/content/site"
 import { pageMeta } from "@/lib/seo"
 
@@ -7,16 +8,29 @@ export const metadata = pageMeta({
   description:
     "Join Beak Insights and work across technology advisory, engineering, data, AI, health and laboratory informatics from strategy through delivery.",
   path: "/careers",
+  image: "/og/og-careers.png",
+  imageAlt: "Careers at Beak Insights",
 })
 
 export default function CareersPage() {
   return (
     <div className="container py-12 md:py-16">
-      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">Careers at Beak</p>
-      <h1 className="mt-4 max-w-4xl font-serif text-4xl md:text-6xl">Do work that survives the slide deck.</h1>
-      <p className="measure mt-6 text-lg">
-        We value people who can structure an ambiguous problem, learn the real workflow, explain difficult ideas clearly and stay involved long enough to see whether the solution works.
-      </p>
+      <div className="grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">Careers at Beak</p>
+          <h1 className="mt-4 max-w-4xl font-serif text-4xl md:text-6xl">Do work that survives the slide deck.</h1>
+          <p className="measure mt-6 text-lg">
+            We value people who can structure an ambiguous problem, learn the real workflow, explain difficult ideas clearly and stay involved long enough to see whether the solution works.
+          </p>
+        </div>
+        <BrandFigure
+          src="/brand/illustrations/careers-slide-to-system.svg"
+          alt="Illustration: a static slide turns into a running, connected system."
+          width={1200}
+          height={800}
+          framed
+        />
+      </div>
 
       <section className="mt-12">
         <h2 className="font-serif text-3xl">What consulting at Beak is like</h2>

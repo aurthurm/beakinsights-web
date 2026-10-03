@@ -1,4 +1,4 @@
-import { HeroDiagram } from "@/components/diagrams"
+import { BrandFigure, BrandIcon } from "@/components/brand-media"
 import { MotionCard } from "@/components/motion/motion-card"
 import { QuietLink } from "@/components/motion/quiet-link"
 import { Reveal } from "@/components/motion/reveal"
@@ -14,6 +14,8 @@ export const metadata = pageMeta({
   description:
     "Beak Insights is an African technology consultancy combining advisory, engineering, data, AI and deep health and laboratory informatics expertise.",
   path: "/",
+  image: "/og/og-home.png",
+  imageAlt: "Beak Insights",
 })
 
 const differentiators = [
@@ -42,7 +44,7 @@ const differentiators = [
 export default function HomePage() {
   return (
     <div>
-      <section className="bg-ink text-white">
+      <section className="hero-navy text-white">
         <div className="container grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
           <div>
             <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
@@ -62,7 +64,14 @@ export default function HomePage() {
               </QuietLink>
             </div>
           </div>
-          <HeroDiagram tone="dark" />
+          <BrandFigure
+            src="/brand/illustrations/home-current-to-target-dark.svg"
+            alt="Diagram: scattered systems in the current estate pass through three decision points and become an orderly, connected target state."
+            width={1200}
+            height={800}
+            caption="Technology, informatics, and healthcare work meet in one target state: systems that can be operated and measured."
+            captionClassName="mt-4 text-sm text-on-ink"
+          />
         </div>
       </section>
 
@@ -140,7 +149,7 @@ export default function HomePage() {
         <Stagger as="ol" className="mt-8 grid gap-6 md:grid-cols-5">
           {method.map((step) => (
             <StaggerItem as="li" key={step.name}>
-              <span className="mark mb-3" aria-hidden="true" />
+              <BrandIcon name={step.icon} className="mb-3 h-10 w-10" />
               <h3 className="font-serif text-xl">{step.name}</h3>
               <p className="mt-2 text-sm text-slate">{step.summary}</p>
             </StaggerItem>
@@ -187,7 +196,8 @@ export default function HomePage() {
             {cases.slice(0, 2).map((item) => (
               <StaggerItem key={item.slug}>
                 <article className="h-full border border-border bg-card p-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  <BrandIcon name={item.icon} />
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                     {item.sector}
                   </p>
                   <h3 className="mt-3 font-serif text-2xl">{item.title}</h3>
@@ -211,7 +221,11 @@ export default function HomePage() {
           <Stagger className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {getInsights().map((item) => (
               <StaggerItem key={item.slug}>
-                <article className="h-full border-t-2 border-gold bg-white p-6">
+                <article className="h-full border-t-2 border-gold bg-white">
+                  {item.cover && item.coverAlt ? (
+                    <img src={item.cover} alt={item.coverAlt} width={1600} height={900} className="h-auto w-full" />
+                  ) : null}
+                  <div className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">
                     {item.type} · {item.topicLabel}
                   </p>
@@ -220,6 +234,7 @@ export default function HomePage() {
                   <QuietLink href={`/insights/${item.slug}`} className="mt-4 inline-flex min-h-11 items-center text-sm font-medium">
                     Read insight
                   </QuietLink>
+                  </div>
                 </article>
               </StaggerItem>
             ))}
@@ -227,14 +242,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ink text-white">
-        <div className="container flex flex-col gap-6 py-16 md:flex-row md:items-center md:justify-between">
-          <Reveal as="h2" className="font-serif text-3xl text-white md:text-4xl">
-            What are you trying to change?
-          </Reveal>
-          <QuietLink href="/contact" className="btn-primary">
-            Talk to an advisor
-          </QuietLink>
+      <section className="band-navy text-white">
+        <div className="container grid items-center gap-8 py-16 md:grid-cols-[minmax(0,1fr)_minmax(0,20rem)]">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <Reveal as="h2" className="font-serif text-3xl text-white md:text-4xl">
+              What are you trying to change?
+            </Reveal>
+            <QuietLink href="/contact" className="btn-primary">
+              Talk to an advisor
+            </QuietLink>
+          </div>
+          <BrandFigure
+            src="/brand/illustrations/contact-tangle-to-target-dark.svg"
+            alt="Illustration: a tangled line straightens into a clear path ending at a target."
+            width={1200}
+            height={800}
+          />
         </div>
       </section>
     </div>

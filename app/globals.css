@@ -170,4 +170,16 @@
   .mark {
     @apply inline-block h-2 w-2 bg-gold;
   }
+
+  .hero-navy {
+    background-color: #0b1f44;
+    background-image: url("/brand/patterns/hero-background-navy.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .band-navy {
+    background-color: #0b1f44;
+  }
 }

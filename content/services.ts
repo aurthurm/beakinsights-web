@@ -19,6 +19,11 @@ export type Service = {
   problems: string[]
   capabilities: { name: string; summary: string }[]
   method: string[]
+  icon?: string
+  illustration?: string
+  illustrationAlt?: string
+  ogImage: string
+  problemIcons?: string[]
   diagram: "architecture" | "information" | "ai" | "workflow"
   diagramTitle: string
   diagramCaption: string
@@ -73,6 +78,11 @@ export const services: Service[] = [
       },
     ],
     method: ["Discover the estate", "Choose the target state", "Design the path", "Build and integrate", "Operate and improve"],
+    icon: "service-technology-engineering",
+    illustration: "/brand/illustrations/service-technology-engineering.svg",
+    illustrationAlt:
+      "Diagram: advisory, architecture, engineering and delivery steps alongside a layered architecture of experience, services and data.",
+    ogImage: "/og/og-it-consulting.png",
     diagram: "architecture",
     tone: "navy",
     diagramTitle: "Current state to working target state",
@@ -126,6 +136,11 @@ export const services: Service[] = [
       },
     ],
     method: ["Discover the flow", "Model the meaning", "Engineer the path", "Connect the systems", "Measure the decision"],
+    icon: "service-data-informatics",
+    illustration: "/brand/illustrations/service-data-informatics.svg",
+    illustrationAlt: "Diagram: a single fact travels from Source to Definition to Exchange to Decision.",
+    ogImage: "/og/og-informatics-and-data.png",
+    problemIcons: ["problem-fragmented", "problem-low-trust", "interoperability"],
     diagram: "information",
     tone: "teal",
     diagramTitle: "From data flow to decision flow",
@@ -190,6 +205,7 @@ export const services: Service[] = [
       "Build and evaluate",
       "Integrate, operate and scale",
     ],
+    ogImage: "/og/og-home.png",
     diagram: "ai",
     tone: "teal",
     diagramTitle: "From trusted knowledge to governed action",
@@ -243,6 +259,11 @@ export const services: Service[] = [
       },
     ],
     method: ["Map the workflow", "Name the information", "Design the architecture", "Build and integrate", "Enable and measure"],
+    icon: "service-health-lab",
+    illustration: "/brand/illustrations/service-health-lab.svg",
+    illustrationAlt:
+      "Diagram: a sample moves to an instrument, into a LIMS record and out as a verified result, linked by barcode, ASTM/HL7 and FHIR.",
+    ogImage: "/og/og-healthcare-transformation.png",
     diagram: "workflow",
     tone: "healthcare",
     diagramTitle: "Workflow before configuration",

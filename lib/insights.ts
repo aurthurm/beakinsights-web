@@ -18,6 +18,9 @@ export type Insight = {
   author: string
   caseSlug?: string
   order?: number
+  cover?: string
+  coverAlt?: string
+  ogImage?: string
 }
 
 const directory = path.join(process.cwd(), "content", "insights")
@@ -61,11 +64,26 @@ function parseInsight(slug: string): { insight: Insight; body: string } {
   if (order !== undefined && (typeof order !== "number" || !Number.isInteger(order) || order < 0)) {
     throw new Error(`Insight ${slug}: order must be a nonnegative integer`)
   }
+  const cover = optionalString(data, "cover", slug)
+  const coverAlt = optionalString(data, "coverAlt", slug)
+  const ogImage = optionalString(data, "ogImage", slug)
+  if ((cover && !coverAlt) || (!cover && coverAlt)) {
+    throw new Error(`Insight ${slug}: cover and coverAlt must be set together`)
+  }
 
   return {
-    insight: { slug, title, description, topic, topicLabel, type, date, updated, author, caseSlug, order },
+    insight: { slug, title, description, topic, topicLabel, type, date, updated, author, caseSlug, order, cover, coverAlt, ogImage },
     body: content,
   }
+}
+
+function optionalString(data: Record<string, unknown>, key: string, slug: string): string | undefined {
+  const value = data[key]
+  if (value === undefined) return undefined
+  if (typeof value !== "string" || !value.trim()) {
+    throw new Error(`Insight ${slug}: ${key} must be a nonempty string`)
+  }
+  return value
 }
 
 export function getInsights(): Insight[] {

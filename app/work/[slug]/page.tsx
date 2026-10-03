@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { BrandFigure, BrandIcon } from "@/components/brand-media"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { CaseCta } from "@/components/case-cta"
 import { TrackView } from "@/components/track-view"
@@ -19,6 +20,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: item.titleMeta,
     description: item.description,
     path: `/work/${item.slug}`,
+    image: item.ogImage,
+    imageAlt: item.title,
   })
 }
 
@@ -38,7 +41,8 @@ export default function CasePage({ params }: { params: { slug: string } }) {
           { name: item.title, href: `/work/${item.slug}` },
         ]}
       />
-      <p className="mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+      <BrandIcon name={item.icon} className="mt-8 h-10 w-10" />
+      <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
         {item.sector}
       </p>
       <h1 className="mt-3 max-w-4xl font-serif text-4xl md:text-5xl">{item.title}</h1>
@@ -75,7 +79,16 @@ export default function CasePage({ params }: { params: { slug: string } }) {
 
       <section className="mt-12">
         <h2 className="font-serif text-3xl">Architecture and workflow</h2>
-        <p className="measure mt-4">{item.diagramNote}</p>
+        <div className="mt-6">
+          <BrandFigure
+            src={item.illustration}
+            alt={item.illustrationAlt}
+            caption={item.diagramNote}
+            width={1200}
+            height={800}
+            framed
+          />
+        </div>
         {item.technology.length > 0 ? (
           <p className="mt-4 text-sm text-muted-foreground">Technology named in the published description: {item.technology.join(", ")}.</p>
         ) : null}

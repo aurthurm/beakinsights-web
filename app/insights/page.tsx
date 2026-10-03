@@ -10,6 +10,8 @@ export const metadata = pageMeta({
   description:
     "Practical analysis on IT strategy, AI and agentic systems, informatics, data, interoperability, healthcare technology and implementation.",
   path: "/insights",
+  image: "/og/og-insights.png",
+  imageAlt: "Insights and research",
 })
 
 const types: InsightType[] = ["Brief", "Guide", "Research"]
@@ -49,15 +51,20 @@ export default function InsightsPage({
       </p>
       <ul className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {visible.map((item) => (
-          <li key={item.slug} className="border-t-2 border-gold bg-white p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-              {item.type} · {item.topicLabel}
-            </p>
-            <h2 className="mt-3 font-serif text-2xl">{item.title}</h2>
-            <p className="mt-3 text-sm text-muted-foreground">{item.description}</p>
-            <Link href={`/insights/${item.slug}`} className="mt-4 inline-flex min-h-11 items-center text-sm font-medium">
-              Read insight
-            </Link>
+          <li key={item.slug} className="border-t-2 border-gold bg-white">
+            {item.cover && item.coverAlt ? (
+              <img src={item.cover} alt={item.coverAlt} width={1600} height={900} className="h-auto w-full" />
+            ) : null}
+            <div className="p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                {item.type} · {item.topicLabel}
+              </p>
+              <h2 className="mt-3 font-serif text-2xl">{item.title}</h2>
+              <p className="mt-3 text-sm text-muted-foreground">{item.description}</p>
+              <Link href={`/insights/${item.slug}`} className="mt-4 inline-flex min-h-11 items-center text-sm font-medium">
+                Read insight
+              </Link>
+            </div>
           </li>
         ))}
       </ul>

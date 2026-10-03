@@ -35,22 +35,27 @@ export const legalLinks = [
 export const method = [
   {
     name: "Diagnose",
+    icon: "step-diagnose",
     summary: "Establish what is happening, what matters, and where the system actually breaks.",
   },
   {
     name: "Design",
+    icon: "step-design",
     summary: "Define a target state that teams can implement, operate and govern—not a slide that expires at the workshop.",
   },
   {
     name: "Build & deliver",
+    icon: "step-build",
     summary: "Carry the decision through engineering, integration, implementation or independent assurance.",
   },
   {
     name: "Enable",
+    icon: "step-enable",
     summary: "Leave ownership, skills, documentation and operating routines with the people who will run the work.",
   },
   {
     name: "Measure",
+    icon: "step-measure",
     summary: "Agree what improved, what did not, and what evidence should change the next decision.",
   },
 ] as const

@@ -7,6 +7,8 @@ export const metadata = pageMeta({
   description:
     "Beak Insights is a multidisciplinary consulting practice spanning technology advisory, engineering, data, AI and health and laboratory informatics.",
   path: "/about/team",
+  image: "/og/og-about.png",
+  imageAlt: "About Beak Insights",
 })
 
 export default function TeamPage() {

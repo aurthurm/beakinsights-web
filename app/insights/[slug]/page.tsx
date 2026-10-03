@@ -23,6 +23,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: `${item.title} | Beak Insights`,
     description: item.description,
     path: `/insights/${item.slug}`,
+    image: item.ogImage ?? item.cover,
+    imageAlt: item.coverAlt ?? item.title,
   })
 }
 
@@ -52,6 +54,9 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
         {item.updated !== item.date ? <span> · Updated {item.updated}</span> : null}
         <span> · {item.author}</span>
       </p>
+      {item.cover && item.coverAlt ? (
+        <img src={item.cover} alt={item.coverAlt} width={1600} height={900} className="mt-8 h-auto w-full max-w-4xl" />
+      ) : null}
       <div className="insight-body measure mt-8">
         <InsightBody source={body} />
       </div>

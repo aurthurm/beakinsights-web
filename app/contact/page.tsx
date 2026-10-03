@@ -1,3 +1,4 @@
+import { BrandFigure } from "@/components/brand-media"
 import { ContactForm } from "@/components/contact-form"
 import { site } from "@/content/site"
 import { pageMeta } from "@/lib/seo"
@@ -7,6 +8,8 @@ export const metadata = pageMeta({
   description:
     "Talk to Beak Insights about technology advisory, engineering, data, AI, health or laboratory informatics consulting.",
   path: "/contact",
+  image: "/og/og-contact.png",
+  imageAlt: "Contact Beak Insights",
 })
 
 export default function ContactPage() {
@@ -22,6 +25,13 @@ export default function ContactPage() {
         </div>
       </div>
       <aside className="space-y-10">
+        <BrandFigure
+          src="/brand/illustrations/contact-tangle-to-target.svg"
+          alt="Illustration: a tangled line straightens into a clear path ending at a target."
+          width={1200}
+          height={800}
+          framed
+        />
         <section>
           <h2 className="font-serif text-3xl">What happens next</h2>
           <p className="mt-4">
