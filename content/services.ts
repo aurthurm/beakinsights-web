@@ -205,6 +205,10 @@ export const services: Service[] = [
       "Build and evaluate",
       "Integrate, operate and scale",
     ],
+    icon: "service-ai-intelligent-systems",
+    illustration: "/brand/illustrations/service-ai-intelligent-systems.svg",
+    illustrationAlt:
+      "Diagram: trusted knowledge moves through retrieval and an agent into a governed action.",
     ogImage: "/og/og-home.png",
     diagram: "ai",
     tone: "teal",
